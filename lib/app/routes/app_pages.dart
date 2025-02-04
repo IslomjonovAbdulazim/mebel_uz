@@ -5,10 +5,15 @@ import 'package:wordly_project/app/bindings/home_binding.dart';
 import 'package:wordly_project/app/features/contacts/imports.dart';
 import 'package:wordly_project/app/features/detail/imports.dart';
 import 'package:wordly_project/app/features/home/imports.dart';
+import 'package:wordly_project/app/features/screens/offline/imports.dart';
 import 'package:wordly_project/app/routes/app_routes.dart';
 
 class AppPages {
   static final pages = [
+    GetPage(
+      name: AppRoutes.offline,
+      page: () => OfflinePage(),
+    ),
     GetPage(
       name: AppRoutes.home,
       page: () => HomePage(),
