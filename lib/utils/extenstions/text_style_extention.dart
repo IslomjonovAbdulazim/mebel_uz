@@ -3,79 +3,84 @@ import 'package:flutter/material.dart';
 import '../constants/font_constants.dart';
 
 extension TextStylesExtension on BuildContext {
-  /// A bold, extra-large style for banners or prominent displays.
+  /// Display style for large headlines, banners, or hero text
   TextStyle get display => TextStyle(
-        fontFamily: FontConstants.oswald,
-        fontSize: 40,
+        fontFamily: FontConstants.clashDisplay,
+        fontSize: 42,
         fontWeight: FontWeight.bold,
-        color: Theme.of(this).colorScheme.onSurface,
+        color: Theme.of(this).colorScheme.onBackground,
       );
 
-  /// A strong, attention-grabbing style for headlines.
+  /// Main headline style for section titles or key headers
   TextStyle get headline => TextStyle(
-        fontFamily: FontConstants.montserrat,
+        fontFamily: FontConstants.clashDisplay,
         fontSize: 32,
-        fontWeight: FontWeight.w600,
-        color: Theme.of(this).colorScheme.onSurface,
+        fontWeight: FontWeight.w700,
+        color: Theme.of(this).colorScheme.onBackground,
       );
 
-  /// A refined title style for primary headings.
+  /// Title style for product names, cards, or main UI elements
   TextStyle get title => TextStyle(
-        fontFamily: FontConstants.nunito,
+        fontFamily: FontConstants.clashDisplay,
         fontSize: 24,
         fontWeight: FontWeight.w600,
-        color: Theme.of(this).colorScheme.onSurface,
+        color: Theme.of(this).colorScheme.onBackground,
       );
 
-  /// A softer style for subtitles or secondary headings.
+  /// Subtitle for secondary headings or additional context
   TextStyle get subtitle => TextStyle(
-        fontFamily: FontConstants.oswald,
+        fontFamily: FontConstants.clashDisplay,
         fontSize: 20,
         fontWeight: FontWeight.w500,
-        // Slightly translucent for a softer feel.
-        color: Theme.of(this).colorScheme.onSurface.withOpacity(0.8),
+        color: Theme.of(this).colorScheme.onBackground.withOpacity(0.8),
       );
 
-  /// The standard style for body text.
+  /// Standard body text for descriptions, paragraphs, or product details
   TextStyle get body => TextStyle(
-        fontFamily: FontConstants.nunito,
+        fontFamily: FontConstants.clashDisplay,
         fontSize: 16,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w400,
         color: Theme.of(this).colorScheme.onSurface,
       );
 
-  /// A smaller style for captions or helper text.
+  /// Caption for small text elements like labels or secondary UI details
   TextStyle get caption => TextStyle(
-        fontFamily: FontConstants.nunito,
-        fontSize: 12,
-        fontWeight: FontWeight.normal,
-        // Reduced opacity for less emphasis.
-        color: Theme.of(this).colorScheme.onSurface.withOpacity(0.6),
+        fontFamily: FontConstants.clashDisplay,
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: Theme.of(this).colorScheme.onSurface.withOpacity(0.7),
       );
 
-  /// A bold style intended for buttons or call-to-action text.
+  /// Style for product prices or important highlighted elements
+  TextStyle get price => TextStyle(
+        fontFamily: FontConstants.clashDisplay,
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
+        color: Theme.of(this).colorScheme.primary,
+      );
+
+  /// Style for button text, strong call-to-action elements
   TextStyle get button => TextStyle(
-        fontFamily: FontConstants.nunito,
+        fontFamily: FontConstants.clashDisplay,
         fontSize: 16,
-        fontWeight: FontWeight.bold,
-        // Typically used on a contrasting background (e.g. primary color).
+        fontWeight: FontWeight.w600,
         color: Theme.of(this).colorScheme.onPrimary,
       );
 
-  /// A monospaced style ideal for code snippets or technical info.
+  /// Monospace style for technical details, order numbers, etc.
   TextStyle get code => TextStyle(
-        fontFamily: FontConstants.sourceCodePro,
+        fontFamily: FontConstants.clashDisplay,
         fontSize: 16,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
         color: Theme.of(this).colorScheme.onSurface,
       );
 
-  /// An understated style for labels or overline text.
+  /// Overline or label text for small UI elements like categories or tabs
   TextStyle get overline => TextStyle(
-        fontFamily: FontConstants.oswald,
-        fontSize: 10,
-        fontWeight: FontWeight.normal,
-        letterSpacing: 1.5,
-        color: Theme.of(this).colorScheme.onSurface.withOpacity(0.7),
+        fontFamily: FontConstants.clashDisplay,
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 1.2,
+        color: Theme.of(this).colorScheme.onSurface.withOpacity(0.6),
       );
 }

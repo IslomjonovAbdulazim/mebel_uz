@@ -66,150 +66,22 @@ flutter:
     - assets/images/
     - assets/lotties/
 
-
-  fonts:
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/montserrat/Montserrat-Black.ttf
-          weight: 900
-        - asset: assets/fonts/montserrat/Montserrat-BlackItalic.ttf
-          weight: 900
-          style: italic
-        - asset: assets/fonts/montserrat/Montserrat-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/montserrat/Montserrat-BoldItalic.ttf
-          weight: 700
-          style: italic
-        - asset: assets/fonts/montserrat/Montserrat-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/montserrat/Montserrat-ExtraBoldItalic.ttf
-          weight: 800
-          style: italic
-        - asset: assets/fonts/montserrat/Montserrat-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/montserrat/Montserrat-ExtraLightItalic.ttf
-          weight: 200
-          style: italic
-        - asset: assets/fonts/montserrat/Montserrat-Italic.ttf
-          style: italic
-        - asset: assets/fonts/montserrat/Montserrat-Light.ttf
-          weight: 300
-        - asset: assets/fonts/montserrat/Montserrat-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: assets/fonts/montserrat/Montserrat-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/montserrat/Montserrat-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/montserrat/Montserrat-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/montserrat/Montserrat-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/montserrat/Montserrat-SemiBoldItalic.ttf
-          weight: 600
-          style: italic
-        - asset: assets/fonts/montserrat/Montserrat-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/montserrat/Montserrat-ThinItalic.ttf
-          weight: 100
-          style: italic
-    - family: Nunito
-      fonts:
-        - asset: assets/fonts/nunito/Nunito-Black.ttf
-          weight: 900
-        - asset: assets/fonts/nunito/Nunito-BlackItalic.ttf
-          weight: 900
-          style: italic
-        - asset: assets/fonts/nunito/Nunito-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/nunito/Nunito-BoldItalic.ttf
-          weight: 700
-          style: italic
-        - asset: assets/fonts/nunito/Nunito-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/nunito/Nunito-ExtraBoldItalic.ttf
-          weight: 800
-          style: italic
-        - asset: assets/fonts/nunito/Nunito-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/nunito/Nunito-ExtraLightItalic.ttf
-          weight: 200
-          style: italic
-        - asset: assets/fonts/nunito/Nunito-Italic.ttf
-          style: italic
-        - asset: assets/fonts/nunito/Nunito-Light.ttf
-          weight: 300
-        - asset: assets/fonts/nunito/Nunito-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: assets/fonts/nunito/Nunito-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/nunito/Nunito-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/nunito/Nunito-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/nunito/Nunito-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/nunito/Nunito-SemiBoldItalic.ttf
-          weight: 600
-          style: italic
-    - family: Oswald
-      fonts:
-        - asset: assets/fonts/oswald/Oswald-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/oswald/Oswald-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/oswald/Oswald-Light.ttf
-          weight: 300
-        - asset: assets/fonts/oswald/Oswald-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/oswald/Oswald-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/oswald/Oswald-SemiBold.ttf
-          weight: 600
-    - family: SourceCodePro
-      fonts:
-        - asset: assets/fonts/source_code_pro/SourceCodePro-Black.ttf
-          weight: 900
-        - asset: assets/fonts/source_code_pro/SourceCodePro-BlackItalic.ttf
-          weight: 900
-          style: italic
-        - asset: assets/fonts/source_code_pro/SourceCodePro-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/source_code_pro/SourceCodePro-BoldItalic.ttf
-          weight: 700
-          style: italic
-        - asset: assets/fonts/source_code_pro/SourceCodePro-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/source_code_pro/SourceCodePro-ExtraBoldItalic.ttf
-          weight: 800
-          style: italic
-        - asset: assets/fonts/source_code_pro/SourceCodePro-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/source_code_pro/SourceCodePro-ExtraLightItalic.ttf
-          weight: 200
-          style: italic
-        - asset: assets/fonts/source_code_pro/SourceCodePro-Italic.ttf
-          style: italic
-        - asset: assets/fonts/source_code_pro/SourceCodePro-Light.ttf
-          weight: 300
-        - asset: assets/fonts/source_code_pro/SourceCodePro-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: assets/fonts/source_code_pro/SourceCodePro-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/source_code_pro/SourceCodePro-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/source_code_pro/SourceCodePro-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/source_code_pro/SourceCodePro-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/source_code_pro/SourceCodePro-SemiBoldItalic.ttf
-          weight: 600
-          style: italic
+  flutter:
+    fonts:
+      - family: ClashDisplay
+        fonts:
+          - asset: assets/fonts/ClashDisplay-Extralight.ttf
+            weight: 200
+          - asset: assets/fonts/ClashDisplay-Light.ttf
+            weight: 300
+          - asset: assets/fonts/ClashDisplay-Regular.ttf
+            weight: 400
+          - asset: assets/fonts/ClashDisplay-Medium.ttf
+            weight: 500
+          - asset: assets/fonts/ClashDisplay-Semibold.ttf
+            weight: 600
+          - asset: assets/fonts/ClashDisplay-Bold.ttf
+            weight: 700
 
 flutter_icons:
   android: true

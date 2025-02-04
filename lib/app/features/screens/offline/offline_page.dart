@@ -58,10 +58,7 @@ class OfflinePage extends StatelessWidget {
                       }
                     },
                     child: Center(
-                      child: Text(
-                        "Retry",
-                        style: context.elevatedButton,
-                      ),
+                      child: Text("Retry"),
                     ),
                   ),
                 ],
