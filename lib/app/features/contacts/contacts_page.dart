@@ -1,7 +1,7 @@
 part of 'imports.dart';
 
-class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+class ContactsPage extends StatelessWidget {
+  const ContactsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-part 'detail_page.dart';
-part 'detail_view.dart';
-part 'detail_widgets.dart';
+part 'contacts_page.dart';
+part 'contacts_view.dart';
+part 'contacts_widgets.dart';
