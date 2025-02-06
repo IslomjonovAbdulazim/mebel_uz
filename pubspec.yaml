@@ -66,22 +66,22 @@ flutter:
     - assets/images/
     - assets/lotties/
 
-  flutter:
-    fonts:
-      - family: ClashDisplay
-        fonts:
-          - asset: assets/fonts/ClashDisplay-Extralight.ttf
-            weight: 200
-          - asset: assets/fonts/ClashDisplay-Light.ttf
-            weight: 300
-          - asset: assets/fonts/ClashDisplay-Regular.ttf
-            weight: 400
-          - asset: assets/fonts/ClashDisplay-Medium.ttf
-            weight: 500
-          - asset: assets/fonts/ClashDisplay-Semibold.ttf
-            weight: 600
-          - asset: assets/fonts/ClashDisplay-Bold.ttf
-            weight: 700
+
+  fonts:
+    - family: ClashDisplay
+      fonts:
+        - asset: assets/fonts/ClashDisplay-Extralight.ttf
+          weight: 200
+        - asset: assets/fonts/ClashDisplay-Light.ttf
+          weight: 300
+        - asset: assets/fonts/ClashDisplay-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/ClashDisplay-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/ClashDisplay-Semibold.ttf
+          weight: 600
+        - asset: assets/fonts/ClashDisplay-Bold.ttf
+          weight: 700
 
 flutter_icons:
   android: true
