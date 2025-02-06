@@ -1,0 +1,350 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'detail_furniture_model.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+DetailFurnitureModel _$DetailFurnitureModelFromJson(Map<String, dynamic> json) {
+  return _DetailFurnitureModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DetailFurnitureModel {
+  String get id => throw _privateConstructorUsedError;
+  String get model => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
+  List<String> get images => throw _privateConstructorUsedError;
+  String get material => throw _privateConstructorUsedError;
+  double get weight => throw _privateConstructorUsedError;
+  int get height => throw _privateConstructorUsedError;
+  int get width => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+
+  /// Serializes this DetailFurnitureModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of DetailFurnitureModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $DetailFurnitureModelCopyWith<DetailFurnitureModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DetailFurnitureModelCopyWith<$Res> {
+  factory $DetailFurnitureModelCopyWith(DetailFurnitureModel value,
+          $Res Function(DetailFurnitureModel) then) =
+      _$DetailFurnitureModelCopyWithImpl<$Res, DetailFurnitureModel>;
+  @useResult
+  $Res call(
+      {String id,
+      String model,
+      int price,
+      List<String> images,
+      String material,
+      double weight,
+      int height,
+      int width,
+      String description});
+}
+
+/// @nodoc
+class _$DetailFurnitureModelCopyWithImpl<$Res,
+        $Val extends DetailFurnitureModel>
+    implements $DetailFurnitureModelCopyWith<$Res> {
+  _$DetailFurnitureModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of DetailFurnitureModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? model = null,
+    Object? price = null,
+    Object? images = null,
+    Object? material = null,
+    Object? weight = null,
+    Object? height = null,
+    Object? width = null,
+    Object? description = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      material: null == material
+          ? _value.material
+          : material // ignore: cast_nullable_to_non_nullable
+              as String,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      width: null == width
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DetailFurnitureModelImplCopyWith<$Res>
+    implements $DetailFurnitureModelCopyWith<$Res> {
+  factory _$$DetailFurnitureModelImplCopyWith(_$DetailFurnitureModelImpl value,
+          $Res Function(_$DetailFurnitureModelImpl) then) =
+      __$$DetailFurnitureModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String model,
+      int price,
+      List<String> images,
+      String material,
+      double weight,
+      int height,
+      int width,
+      String description});
+}
+
+/// @nodoc
+class __$$DetailFurnitureModelImplCopyWithImpl<$Res>
+    extends _$DetailFurnitureModelCopyWithImpl<$Res, _$DetailFurnitureModelImpl>
+    implements _$$DetailFurnitureModelImplCopyWith<$Res> {
+  __$$DetailFurnitureModelImplCopyWithImpl(_$DetailFurnitureModelImpl _value,
+      $Res Function(_$DetailFurnitureModelImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DetailFurnitureModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? model = null,
+    Object? price = null,
+    Object? images = null,
+    Object? material = null,
+    Object? weight = null,
+    Object? height = null,
+    Object? width = null,
+    Object? description = null,
+  }) {
+    return _then(_$DetailFurnitureModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+      images: null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      material: null == material
+          ? _value.material
+          : material // ignore: cast_nullable_to_non_nullable
+              as String,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      width: null == width
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DetailFurnitureModelImpl implements _DetailFurnitureModel {
+  const _$DetailFurnitureModelImpl(
+      {required this.id,
+      required this.model,
+      required this.price,
+      required final List<String> images,
+      required this.material,
+      required this.weight,
+      required this.height,
+      required this.width,
+      required this.description})
+      : _images = images;
+
+  factory _$DetailFurnitureModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DetailFurnitureModelImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String model;
+  @override
+  final int price;
+  final List<String> _images;
+  @override
+  List<String> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
+
+  @override
+  final String material;
+  @override
+  final double weight;
+  @override
+  final int height;
+  @override
+  final int width;
+  @override
+  final String description;
+
+  @override
+  String toString() {
+    return 'DetailFurnitureModel(id: $id, model: $model, price: $price, images: $images, material: $material, weight: $weight, height: $height, width: $width, description: $description)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DetailFurnitureModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.model, model) || other.model == model) &&
+            (identical(other.price, price) || other.price == price) &&
+            const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.material, material) ||
+                other.material == material) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.description, description) ||
+                other.description == description));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      model,
+      price,
+      const DeepCollectionEquality().hash(_images),
+      material,
+      weight,
+      height,
+      width,
+      description);
+
+  /// Create a copy of DetailFurnitureModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DetailFurnitureModelImplCopyWith<_$DetailFurnitureModelImpl>
+      get copyWith =>
+          __$$DetailFurnitureModelImplCopyWithImpl<_$DetailFurnitureModelImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DetailFurnitureModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _DetailFurnitureModel implements DetailFurnitureModel {
+  const factory _DetailFurnitureModel(
+      {required final String id,
+      required final String model,
+      required final int price,
+      required final List<String> images,
+      required final String material,
+      required final double weight,
+      required final int height,
+      required final int width,
+      required final String description}) = _$DetailFurnitureModelImpl;
+
+  factory _DetailFurnitureModel.fromJson(Map<String, dynamic> json) =
+      _$DetailFurnitureModelImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get model;
+  @override
+  int get price;
+  @override
+  List<String> get images;
+  @override
+  String get material;
+  @override
+  double get weight;
+  @override
+  int get height;
+  @override
+  int get width;
+  @override
+  String get description;
+
+  /// Create a copy of DetailFurnitureModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DetailFurnitureModelImplCopyWith<_$DetailFurnitureModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
