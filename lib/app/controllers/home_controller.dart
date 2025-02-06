@@ -28,11 +28,16 @@ class HomeController extends GetxController {
         }
       },
     );
+    List images = [
+      "assets/fur1.png",
+      "assets/fur2.png",
+      "assets/fur3.png",
+    ];
 
     furniture.value = List.generate(10, (int index) {
       return FurnitureEntity(
         id: "-1",
-        image: "",
+        image: images[index % 3],
         model: faker.lorem.word(),
         price: faker.currency.random.integer(10000000, min: 100000),
       );
