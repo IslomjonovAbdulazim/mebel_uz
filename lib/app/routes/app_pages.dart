@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:wordly_project/app/bindings/company_binding.dart';
+import 'package:wordly_project/app/features/company/imports.dart';
 
 import '../bindings/contact_binding.dart';
 import '../bindings/detail_binding.dart';
@@ -24,9 +26,9 @@ class AppPages {
       children: [
         GetPage(
           name: AppRoutes.company,
-          page: () => ContactsPage(),
+          page: () => CompanyPage(),
           bindings: [
-            ContactBinding(),
+            CompanyBinding(),
           ],
         ),
         GetPage(
