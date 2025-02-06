@@ -16,7 +16,7 @@ class FurnitureWidget extends StatelessWidget {
     return CupertinoButton(
       padding: EdgeInsets.zero,
       onPressed: () {
-        Get.toNamed(AppRoutes.detail);
+        Get.toNamed(AppRoutes.detail, arguments: furniture.model);
       },
       child: Container(
         padding: EdgeInsets.only(
@@ -52,7 +52,7 @@ class FurnitureWidget extends StatelessWidget {
                 maxLines: 2,
               ),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: 4),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
@@ -67,4 +67,3 @@ class FurnitureWidget extends StatelessWidget {
     );
   }
 }
-

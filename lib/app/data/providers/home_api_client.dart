@@ -3,7 +3,6 @@ import 'package:retrofit/retrofit.dart';
 
 import '../../../utils/constants/api_constants.dart';
 import '../models/furniture_model.dart';
-import '../models/hospital_furniture_model.dart';
 
 part 'home_api_client.g.dart';
 

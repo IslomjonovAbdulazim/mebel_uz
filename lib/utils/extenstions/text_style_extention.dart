@@ -23,7 +23,7 @@ extension TextStylesExtension on BuildContext {
   TextStyle get title => TextStyle(
         fontFamily: FontConstants.clashDisplay,
         fontSize: 20,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
         height: 1,
         color: Theme.of(this).colorScheme.onBackground,
       );
