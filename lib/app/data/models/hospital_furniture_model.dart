@@ -25,7 +25,6 @@ class HospitalFurnitureModel with _$HospitalFurnitureModel {
     @Default(false) bool adjustable,
     @Default(false) bool hasWheels,
 
-    // Compliance & Additional Info
     int? warrantyYears,
     double? priceUsd,
 
