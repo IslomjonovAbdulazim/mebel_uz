@@ -22,7 +22,7 @@ class AppPages {
       ],
       children: [
         GetPage(
-          name: AppRoutes.contacts,
+          name: AppRoutes.company,
           page: () => ContactsPage(),
           bindings: [
             ContactsBinding(),
@@ -36,7 +36,7 @@ class AppPages {
           ],
           children: [
             GetPage(
-              name: AppRoutes.contacts,
+              name: AppRoutes.contact,
               page: () => ContactsPage(),
               bindings: [
                 ContactsBinding(),
