@@ -11,7 +11,5 @@ abstract class HomeApiClient {
   factory HomeApiClient(Dio dio, {String baseUrl}) = _HomeApiClient;
 
   @POST(ApiConstants.books)
-  Future<List<HospitalFurnitureModel>> furniture(
-    @Body() Map<String, dynamic> body,
-  );
+  Future<List<HospitalFurnitureModel>> furniture();
 }
