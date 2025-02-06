@@ -1,12 +1,13 @@
 import 'package:get/get.dart';
-import 'package:wordly_project/app/bindings/contacts_binding.dart';
-import 'package:wordly_project/app/bindings/detail_binding.dart';
-import 'package:wordly_project/app/bindings/home_binding.dart';
-import 'package:wordly_project/app/features/contacts/imports.dart';
-import 'package:wordly_project/app/features/detail/imports.dart';
-import 'package:wordly_project/app/features/home/imports.dart';
-import 'package:wordly_project/app/features/screens/offline/imports.dart';
-import 'package:wordly_project/app/routes/app_routes.dart';
+
+import '../bindings/contact_binding.dart';
+import '../bindings/detail_binding.dart';
+import '../bindings/home_binding.dart';
+import '../features/contact/imports.dart';
+import '../features/detail/imports.dart';
+import '../features/home/imports.dart';
+import '../features/screens/offline/imports.dart';
+import 'app_routes.dart';
 
 class AppPages {
   static final pages = [
@@ -25,7 +26,7 @@ class AppPages {
           name: AppRoutes.company,
           page: () => ContactsPage(),
           bindings: [
-            ContactsBinding(),
+            ContactBinding(),
           ],
         ),
         GetPage(
@@ -39,7 +40,7 @@ class AppPages {
               name: AppRoutes.contact,
               page: () => ContactsPage(),
               bindings: [
-                ContactsBinding(),
+                ContactBinding(),
               ],
             ),
           ],
