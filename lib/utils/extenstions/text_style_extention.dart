@@ -24,6 +24,7 @@ extension TextStylesExtension on BuildContext {
         fontFamily: FontConstants.clashDisplay,
         fontSize: 20,
         fontWeight: FontWeight.w500,
+        height: 1,
         color: Theme.of(this).colorScheme.onBackground,
       );
 

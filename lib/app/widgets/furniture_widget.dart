@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:wordly_project/app/routes/app_routes.dart';
 import 'package:wordly_project/domain/entities/furniture_entity.dart';
 import 'package:wordly_project/utils/extenstions/color_extension.dart';
 import 'package:wordly_project/utils/extenstions/text_style_extention.dart';
+import 'package:wordly_project/utils/helpers/number_formatter_helper.dart';
 
 class FurnitureWidget extends StatelessWidget {
   final FurnitureEntity furniture;
@@ -12,11 +15,14 @@ class FurnitureWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoButton(
       padding: EdgeInsets.zero,
-      onPressed: () {},
+      onPressed: () {
+        Get.toNamed(AppRoutes.detail);
+      },
       child: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 5,
+        padding: EdgeInsets.only(
+          left: 10,
+          right: 10,
+          bottom: 10,
         ),
         decoration: BoxDecoration(
           color: context.cardColor,
@@ -26,19 +32,34 @@ class FurnitureWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Center(
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 5),
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color: context.backgroundColor,
+                  borderRadius: BorderRadius.circular(15),
+                ),
                 child: Image.asset(
                   furniture.image,
                 ),
               ),
             ),
-            Text(
-              furniture.model,
-              style: context.title,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                furniture.model,
+                style: context.title,
+                maxLines: 2,
+              ),
             ),
-            Text(
-              "${furniture.price} UZS",
-              style: context.price,
+            SizedBox(height: 5),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                "${NumberFormatterHelper.formatWithSeparator(furniture.price)}  UZS",
+                style: context.price,
+                maxLines: 2,
+              ),
             ),
           ],
         ),

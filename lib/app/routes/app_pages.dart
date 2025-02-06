@@ -33,20 +33,20 @@ class AppPages {
             CompanyBinding(),
           ],
         ),
+      ],
+    ),
+    GetPage(
+      name: AppRoutes.detail,
+      page: () => DetailPage(),
+      bindings: [
+        DetailBinding(),
+      ],
+      children: [
         GetPage(
-          name: AppRoutes.detail,
-          page: () => DetailPage(),
+          name: AppRoutes.contact,
+          page: () => ContactsPage(),
           bindings: [
-            DetailBinding(),
-          ],
-          children: [
-            GetPage(
-              name: AppRoutes.contact,
-              page: () => ContactsPage(),
-              bindings: [
-                ContactBinding(),
-              ],
-            ),
+            ContactBinding(),
           ],
         ),
       ],

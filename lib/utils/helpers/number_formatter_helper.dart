@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
-class NumberFormatterService {
-  static String formatWithSeparator(num value, {String separator = ","}) {
+class NumberFormatterHelper {
+  static String formatWithSeparator(num value, {String separator = "  "}) {
     final formatter = NumberFormat("#,###");
     return formatter.format(value).replaceAll(",", separator);
   }
