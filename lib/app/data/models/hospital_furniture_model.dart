@@ -20,7 +20,6 @@ class HospitalFurnitureModel with _$HospitalFurnitureModel {
     double? weightKg,
     double? loadCapacityKg,
 
-    // Material & Features
     String? material,
     @Default(false) bool adjustable,
     @Default(false) bool hasWheels,
