@@ -2,72 +2,72 @@ import 'package:get/get.dart';
 
 class StatusCodeService {
   static void showSnackbar(int statusCode) {
-    String title = "Error";
-    String message = "Something went wrong.";
+    String title = "Xatolik";
+    String message = "Nimadir noto‘g‘ri ketdi.";
     bool isError = true;
 
     switch (statusCode) {
       case 200:
-        title = "Success";
-        message = "Request was successful.";
+        title = "Muvaffaqiyatli";
+        message = "So‘rov muvaffaqiyatli bajarildi.";
         isError = false;
         break;
       case 201:
-        title = "Created";
-        message = "New resource created successfully.";
+        title = "Yaratildi";
+        message = "Yangi resurs muvaffaqiyatli yaratildi.";
         isError = false;
         break;
       case 400:
-        title = "Bad Request";
-        message = "Invalid request. Please check your input.";
+        title = "Noto‘g‘ri so‘rov";
+        message = "So‘rov noto‘g‘ri. Iltimos, ma’lumotlarni tekshiring.";
         break;
       case 401:
-        title = "Unauthorized";
-        message = "You need to log in first.";
+        title = "Avtorizatsiya talab qilinadi";
+        message = "Birinchi bo‘lib tizimga kiring.";
         break;
       case 403:
-        title = "Forbidden";
-        message = "You don't have permission to access this resource.";
+        title = "Ruxsat yo‘q";
+        message = "Bu resursga kirish huquqiga ega emassiz.";
         break;
       case 404:
-        title = "Not Found";
-        message = "Requested resource not found.";
+        title = "Topilmadi";
+        message = "So‘ralgan resurs topilmadi.";
         break;
       case 405:
-        title = "Method Not Allowed";
-        message = "The request method is not supported.";
+        title = "Ruxsat etilmagan metod";
+        message = "Bu so‘rov metodi qo‘llab-quvvatlanmaydi.";
         break;
       case 408:
-        title = "Request Timeout";
-        message = "The server took too long to respond.";
+        title = "So‘rov vaqti tugadi";
+        message = "Server javob berish uchun juda uzoq kutdi.";
         break;
       case 409:
-        title = "Conflict";
-        message = "There is a conflict with the current state of the resource.";
+        title = "To‘qnashuv";
+        message = "Resurs holati bilan bog‘liq to‘qnashuv yuzaga keldi.";
         break;
       case 429:
-        title = "Too Many Requests";
-        message = "You are sending too many requests. Please slow down.";
+        title = "Ko‘p so‘rov";
+        message = "Juda ko‘p so‘rov jo‘natdingiz. Iltimos, biroz kuting.";
         break;
       case 500:
-        title = "Internal Server Error";
-        message = "Something went wrong on the server.";
+        title = "Ichki server xatosi";
+        message = "Serverda nimadir noto‘g‘ri ketdi.";
         break;
       case 502:
-        title = "Bad Gateway";
-        message = "Received an invalid response from the upstream server.";
+        title = "Yomon shlyuz";
+        message = "Server noto‘g‘ri javob qaytardi.";
         break;
       case 503:
-        title = "Service Unavailable";
-        message = "The server is currently unavailable.";
+        title = "Xizmat mavjud emas";
+        message = "Server hozircha ishlamayapti.";
         break;
       case 504:
-        title = "Gateway Timeout";
-        message = "The server did not receive a timely response.";
+        title = "Shlyuz vaqti tugadi";
+        message = "Server o‘z vaqtida javob olmadi.";
         break;
       default:
-        title = "Unknown Error";
-        message = "Unexpected error occurred. Code: $statusCode";
+        title = "Noma’lum xatolik";
+        message = "Kutilmagan xatolik yuz berdi. Kod: $statusCode";
         break;
     }
 
