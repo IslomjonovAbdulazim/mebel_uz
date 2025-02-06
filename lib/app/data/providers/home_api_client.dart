@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:wordly_project/app/data/models/hospital_furniture_model.dart';
 
 import '../../../utils/constants/api_constants.dart';
+import '../models/furniture_model.dart';
+import '../models/hospital_furniture_model.dart';
 
 part 'home_api_client.g.dart';
 
@@ -10,6 +11,6 @@ part 'home_api_client.g.dart';
 abstract class HomeApiClient {
   factory HomeApiClient(Dio dio, {String baseUrl}) = _HomeApiClient;
 
-  @POST(ApiConstants.books)
-  Future<List<HospitalFurnitureModel>> furniture();
+  @POST(ApiConstants.allFurniture)
+  Future<List<FurnitureModel>> allFurniture();
 }

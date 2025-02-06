@@ -20,12 +20,12 @@ class _HomeApiClient implements HomeApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<HospitalFurnitureModel>> furniture() async {
+  Future<List<FurnitureModel>> allFurniture() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<HospitalFurnitureModel>>(
+    final _options = _setStreamType<List<FurnitureModel>>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -36,12 +36,11 @@ class _HomeApiClient implements HomeApiClient {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<HospitalFurnitureModel> _value;
+    late List<FurnitureModel> _value;
     try {
       _value = _result.data!
           .map(
-            (dynamic i) =>
-                HospitalFurnitureModel.fromJson(i as Map<String, dynamic>),
+            (dynamic i) => FurnitureModel.fromJson(i as Map<String, dynamic>),
           )
           .toList();
     } on Object catch (e, s) {
