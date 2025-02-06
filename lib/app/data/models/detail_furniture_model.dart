@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wordly_project/domain/entities/furniture_entity.dart';
+import 'package:wordly_project/domain/entities/detail_furniture_entity.dart';
 
 part 'detail_furniture_model.freezed.dart';
 part 'detail_furniture_model.g.dart';
@@ -23,12 +23,17 @@ class DetailFurnitureModel with _$DetailFurnitureModel {
 }
 
 extension DetailFurnitureModelExtension on DetailFurnitureModel {
-  FurnitureEntity toEntity() {
-    return FurnitureEntity(
+  DetailFurnitureEntity toEntity() {
+    return DetailFurnitureEntity(
       id: id,
-      image: images.isNotEmpty ? images.first : '',
       model: model,
       price: price,
+      images: images,
+      material: material,
+      weight: weight,
+      height: height,
+      width: width,
+      description: description,
     );
   }
 }

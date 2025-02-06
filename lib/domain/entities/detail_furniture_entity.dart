@@ -1,4 +1,4 @@
-class FurnitureDetailEntity {
+class DetailFurnitureEntity {
   final String id;
   final String model;
   final int price;
@@ -9,7 +9,7 @@ class FurnitureDetailEntity {
   final int width;
   final String description;
 
-  FurnitureDetailEntity({
+  DetailFurnitureEntity({
     required this.id,
     required this.model,
     required this.price,
