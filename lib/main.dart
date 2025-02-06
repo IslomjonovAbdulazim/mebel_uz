@@ -1,15 +1,19 @@
 // lib/main_binding.dart
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:wordly_project/utils/services/connectivity_service.dart';
-import 'package:wordly_project/utils/services/token_service.dart';
-import 'package:wordly_project/utils/themes/app_theme.dart';
+import 'package:wordly_project/app/bindings/home_repository_iml_binding.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
+import 'utils/services/connectivity_service.dart';
 import 'utils/services/theme_service.dart';
+import 'utils/services/token_service.dart';
+import 'utils/themes/app_theme.dart';
+
+final faker = Faker();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,20 +22,32 @@ void main() async {
   ]);
   await GetStorage.init();
   Get.put(ThemeController());
-  await Get.putAsync(() => ConnectivityService().init());
-  await Get.putAsync(() => TokenService().init());
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Get.putAsync(() => ConnectivityService().init());
+      await Get.putAsync(() => TokenService().init());
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     final ThemeController themeController = Get.find<ThemeController>();
     return Obx(() {
       return GetMaterialApp(
-        title: 'Wordly App',
+        title: 'Mebel Uz',
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         themeMode: themeController.themeMode,

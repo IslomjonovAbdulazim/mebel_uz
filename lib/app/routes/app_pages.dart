@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:wordly_project/app/bindings/company_binding.dart';
+import 'package:wordly_project/app/bindings/home_repository_iml_binding.dart';
 import 'package:wordly_project/app/features/company/imports.dart';
 
 import '../bindings/contact_binding.dart';
@@ -22,6 +23,7 @@ class AppPages {
       page: () => HomePage(),
       bindings: [
         HomeBinding(),
+        HomeRepositoryImlBinding(),
       ],
       children: [
         GetPage(

@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../constants/font_constants.dart';
+import 'color_extension.dart';
 
 extension ButtonStylesExtension on BuildContext {
+  TextStyle get buttonText => TextStyle(
+        fontFamily: FontConstants.clashDisplay,
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        color: backgroundColor,
+      );
+
   /// Standard ElevatedButton style with a smooth modern look.
   ButtonStyle get elevatedButtonStyle => ElevatedButton.styleFrom(
         foregroundColor: Theme.of(this).colorScheme.onPrimary,

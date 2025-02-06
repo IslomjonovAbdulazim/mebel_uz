@@ -2,6 +2,6 @@
 class TitleConstants {
   TitleConstants._();
 
-  static const String connectionLost = "Connection Lost";
-  static const String noConnection = "No Connection";
+  static const String connectionLost = "Aloqa uzildi";
+  static const String noConnection = "Aloqa yo‘q";
 }
