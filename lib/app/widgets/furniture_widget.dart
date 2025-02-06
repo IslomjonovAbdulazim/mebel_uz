@@ -67,3 +67,4 @@ class FurnitureWidget extends StatelessWidget {
     );
   }
 }
+
