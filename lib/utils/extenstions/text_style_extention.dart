@@ -22,15 +22,15 @@ extension TextStylesExtension on BuildContext {
   /// Title style for product names, cards, or main UI elements
   TextStyle get title => TextStyle(
         fontFamily: FontConstants.clashDisplay,
-        fontSize: 24,
-        fontWeight: FontWeight.w600,
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
         color: Theme.of(this).colorScheme.onBackground,
       );
 
   /// Subtitle for secondary headings or additional context
   TextStyle get subtitle => TextStyle(
         fontFamily: FontConstants.clashDisplay,
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: FontWeight.w500,
         color: Theme.of(this).colorScheme.onBackground.withOpacity(0.8),
       );
@@ -54,8 +54,8 @@ extension TextStylesExtension on BuildContext {
   /// Style for product prices or important highlighted elements
   TextStyle get price => TextStyle(
         fontFamily: FontConstants.clashDisplay,
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
         color: Theme.of(this).colorScheme.primary,
       );
 

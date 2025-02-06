@@ -35,9 +35,9 @@ class HomeController extends GetxController {
       },
     );
     List images = [
-      "assets/fur1.png",
-      "assets/fur2.png",
-      "assets/fur3.png",
+      "assets/images/fur1.png",
+      "assets/images/fur2.png",
+      "assets/images/fur3.png",
     ];
 
     furniture.value = List.generate(10, (int index) {
