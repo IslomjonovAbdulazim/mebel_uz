@@ -13,7 +13,6 @@ class HospitalFurnitureModel with _$HospitalFurnitureModel {
     String? modelNumber,
     String? description,
 
-    // Dimensions & Capacity
     double? heightCm,
     double? widthCm,
     double? depthCm,
