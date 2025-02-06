@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:wordly_project/app/data/models/hospital_furniture_model.dart';
-import 'package:wordly_project/domain/respositories/home_repository.dart';
-import 'package:wordly_project/utils/errors/network_failure.dart';
 
+import '../../../domain/respositories/home_repository.dart';
 import '../../../utils/constants/api_constants.dart';
+import '../../../utils/errors/network_failure.dart';
+import '../models/hospital_furniture_model.dart';
 import '../providers/home_api_client.dart';
 
 class HomeRepositoryImpl extends HomeRepository {
