@@ -13,6 +13,7 @@ class HomeController extends GetxController {
     isLoading.value = true;
     final api = Get.find<HomeRepository>();
     final result = await api.furniture();
+    await Future.delayed(Duration(seconds: 3));
     isLoading.value = false;
 
     result.fold(
@@ -27,5 +28,7 @@ class HomeController extends GetxController {
         }
       },
     );
+
+    furniture.value = [];
   }
 }
