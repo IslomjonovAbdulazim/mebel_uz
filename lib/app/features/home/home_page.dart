@@ -5,6 +5,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    Logger.log("--------------");
+    return Scaffold(
+      body: Stack(
+        children: [
+          SafeArea(
+            child: _Furniture(),
+          ),
+          Obx(
+            () => LoadingPage(
+              Get.find<HomeController>().isLoading.value,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

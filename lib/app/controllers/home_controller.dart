@@ -9,11 +9,17 @@ class HomeController extends GetxController {
   RxBool isLoading = false.obs;
   Rx<List<FurnitureEntity>> furniture = Rx<List<FurnitureEntity>>([]);
 
+  @override
+  void onInit() {
+    init();
+    super.onInit();
+  }
+
   Future<void> init() async {
     isLoading.value = true;
     final api = Get.find<HomeRepository>();
     final result = await api.allFurniture();
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 1));
     isLoading.value = false;
 
     result.fold(
