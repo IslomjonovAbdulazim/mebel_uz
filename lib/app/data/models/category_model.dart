@@ -9,7 +9,6 @@ class CategoryModel with _$CategoryModel {
     required String id,
     required String name,
     String? image,
-    String? description,
   }) = _CategoryModel;
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) =>
