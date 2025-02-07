@@ -10,11 +10,25 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           SafeArea(
-            child: _Furniture(),
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              children: [
+                _Categories(),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    "Mahsulotlar",
+                    style: context.display,
+                  ),
+                ),
+                _Furniture(),
+              ],
+            ),
           ),
           Obx(
             () => LoadingPage(
-              Get.find<HomeController>().isLoading.value,
+              Get.find<HomeController>().isLoadingFurniture.value,
             ),
           ),
         ],

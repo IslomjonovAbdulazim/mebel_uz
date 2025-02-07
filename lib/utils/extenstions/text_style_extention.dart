@@ -6,7 +6,7 @@ extension TextStylesExtension on BuildContext {
   /// Display style for large headlines, banners, or hero text
   TextStyle get display => TextStyle(
         fontFamily: FontConstants.clashDisplay,
-        fontSize: 42,
+        fontSize: 36,
         fontWeight: FontWeight.bold,
         color: Theme.of(this).colorScheme.onBackground,
       );
