@@ -9,3 +9,4 @@ class ApiConstants {
   static const String discountFurniture = "/api/v1/discount-furniture/";
   static const String company = "/api/v1/company/";
 }
+
