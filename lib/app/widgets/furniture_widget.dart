@@ -16,7 +16,7 @@ class FurnitureWidget extends StatelessWidget {
     return CupertinoButton(
       padding: EdgeInsets.zero,
       onPressed: () {
-        Get.toNamed(AppRoutes.detail, arguments: furniture.model);
+        Get.toNamed(AppRoutes.detail, arguments: furniture.name);
       },
       child: Container(
         padding: EdgeInsets.all(8),
@@ -35,8 +35,8 @@ class FurnitureWidget extends StatelessWidget {
                   color: context.backgroundColor,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Image.asset(
-                  furniture.image,
+                child: Image.network(
+                  furniture.images[0],
                 ),
               ),
             ),
@@ -44,7 +44,7 @@ class FurnitureWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                furniture.model,
+                furniture.name,
                 style: context.title,
                 maxLines: 2,
               ),

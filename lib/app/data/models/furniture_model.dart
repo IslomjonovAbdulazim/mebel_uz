@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wordly_project/domain/entities/furniture_entity.dart';
+import '../../../domain/entities/furniture_entity.dart';
 
 part 'furniture_model.freezed.dart';
 part 'furniture_model.g.dart';
@@ -7,10 +7,12 @@ part 'furniture_model.g.dart';
 @freezed
 class FurnitureModel with _$FurnitureModel {
   const factory FurnitureModel({
-    required String id,
-    required String model,
+    required int id,
+    required String name,
     required int price,
-    required String image,
+    required bool discount,
+    required int? discountPercent,
+    required List<String> images,
   }) = _FurnitureModel;
 
   factory FurnitureModel.fromJson(Map<String, dynamic> json) =>
@@ -20,10 +22,12 @@ class FurnitureModel with _$FurnitureModel {
 extension FurnitureModelX on FurnitureModel {
   FurnitureEntity toEntity() {
     return FurnitureEntity(
-      image: image,
-      model: model,
-      price: price,
       id: id,
+      name: name,
+      price: price,
+      discount: discount,
+      discountPercent: discountPercent,
+      images: images,
     );
   }
 }

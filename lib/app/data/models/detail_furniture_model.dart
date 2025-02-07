@@ -7,15 +7,18 @@ part 'detail_furniture_model.g.dart';
 @freezed
 class DetailFurnitureModel with _$DetailFurnitureModel {
   const factory DetailFurnitureModel({
-    required String id,
-    required String model,
+    required int id,
+    required String name,
     required int price,
-    required List<String> images,
-    required String material,
+    required String description,
     required double weight,
     required int height,
     required int width,
-    required String description,
+    required bool discount,
+    @JsonKey(name: 'discount_start') required String discountStart,
+    @JsonKey(name: 'discount_end') required String discountEnd,
+    @JsonKey(name: 'discount_percent') required int discountPercentage,
+    required List<String> images,
   }) = _DetailFurnitureModel;
 
   factory DetailFurnitureModel.fromJson(Map<String, dynamic> json) =>
@@ -26,14 +29,17 @@ extension DetailFurnitureModelExtension on DetailFurnitureModel {
   DetailFurnitureEntity toEntity() {
     return DetailFurnitureEntity(
       id: id,
-      model: model,
+      name: name,
       price: price,
-      images: images,
-      material: material,
+      description: description,
       weight: weight,
       height: height,
       width: width,
-      description: description,
+      discount: discount,
+      discountStart: discountStart,
+      discountEnd: discountEnd,
+      discountPercentage: discountPercentage,
+      images: images,
     );
   }
 }

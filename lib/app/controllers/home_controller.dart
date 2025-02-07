@@ -50,10 +50,12 @@ class HomeController extends GetxController {
 
     furniture.value = List.generate(10, (int index) {
       return FurnitureEntity(
-        id: "-1",
-        image: images[index % 3],
-        model: faker.lorem.word(),
+        id: -1,
         price: faker.currency.random.integer(10000000, min: 100000),
+        name: '',
+        discount: false,
+        discountPercent: null,
+        images: [],
       );
     });
   }
