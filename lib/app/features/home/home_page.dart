@@ -7,6 +7,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Logger.log("--------------");
     return Scaffold(
+      appBar: AppBar(
+
+      ),
       body: Stack(
         children: [
           SafeArea(
