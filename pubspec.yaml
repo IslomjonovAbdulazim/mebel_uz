@@ -48,7 +48,6 @@ dependencies:
   json_annotation: ^4.9.0
 
   faker: ^2.2.0
-  flutter_native_splash: ^2.4.4
 
 dev_dependencies:
   flutter_test:

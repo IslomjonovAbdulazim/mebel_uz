@@ -14,6 +14,14 @@ class CompanyPage extends StatelessWidget {
           height: 150,
           alignment: Alignment.centerLeft,
         ),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            _SocialAccounts(),
+          ],
+        ),
       ),
     );
   }
