@@ -67,6 +67,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/lotties/
+    - assets/brand/
 
 
   fonts:

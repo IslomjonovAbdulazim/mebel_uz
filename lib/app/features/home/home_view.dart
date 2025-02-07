@@ -12,8 +12,8 @@ class _Furniture extends StatelessWidget {
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 5,
-          mainAxisSpacing: 10,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
           childAspectRatio: 3 / 4,
         ),
         itemCount: controller.furniture.value.length,
@@ -44,6 +44,7 @@ class _Categories extends StatelessWidget {
               style: context.display,
             ),
           ),
+          SizedBox(height: 4),
           controller.isLoadingCategories.value
               ? Center(
                   child: CircularProgressIndicator.adaptive(),
@@ -63,7 +64,7 @@ class _Categories extends StatelessWidget {
                           child: Container(
                             padding: EdgeInsets.symmetric(
                               horizontal: 20,
-                              vertical: 8,
+                              vertical: 10,
                             ),
                             margin: EdgeInsets.symmetric(horizontal: 5),
                             decoration: BoxDecoration(
@@ -72,7 +73,7 @@ class _Categories extends StatelessWidget {
                             ),
                             child: Text(
                               cat.name,
-                              style: context.subtitle,
+                              style: context.title,
                             ),
                           ),
                         );

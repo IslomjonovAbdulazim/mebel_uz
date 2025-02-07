@@ -29,6 +29,7 @@ class FurnitureWidget extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
+                width: double.maxFinite,
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: context.backgroundColor,
@@ -39,7 +40,7 @@ class FurnitureWidget extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 4),
+            SizedBox(height: 6),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
