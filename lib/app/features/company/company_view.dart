@@ -115,14 +115,13 @@ class _SocialAccounts extends StatelessWidget {
               ),
               SizedBox(width: 10),
               Text(
-                "Website",
+                "Telegram  Bot",
                 style: context.title,
               ),
             ],
           ),
         ),
         SizedBox(height: 5),
-
       ],
     );
   }
@@ -207,21 +206,9 @@ class _Contact extends StatelessWidget {
               throw 'Could not launch $url';
             }
           },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Image.asset(
-                IconConstants.admin,
-                height: 30,
-                color: context.textPrimary,
-              ),
-              SizedBox(width: 10),
-              Text(
-                "Abduazim   Islomjonov",
-                style: context.title,
-              ),
-            ],
+          child: Text(
+            "Abduazim   Islomjonov",
+            style: context.title,
           ),
         ),
       ],
@@ -229,3 +216,91 @@ class _Contact extends StatelessWidget {
   }
 }
 
+class _Location extends StatelessWidget {
+  const _Location();
+
+  @override
+  Widget build(BuildContext context) {
+    double latitude = 41.3265322;
+    double longitude = 69.2284909;
+    return Column(
+      children: [
+        Text(
+          "Lokatsiya",
+          style: context.display,
+        ),
+        Container(
+          height: 220,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.grey[300],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: FlutterMap(
+              options: MapOptions(
+                onTap: (_, __) async {
+                  final Uri googleMapsUri = Uri.parse(
+                      "geo:$latitude,$longitude?q=$latitude,$longitude");
+                  final Uri googleMapsWebUri = Uri.parse(
+                      "https://www.google.com/maps/search/?api=1&query=$latitude,$longitude");
+                  final Uri appleMapsUri = Uri.parse(
+                      "https://maps.apple.com/?q=$latitude,$longitude");
+                  final Uri yandexMapsUri = Uri.parse(
+                      "yandexmaps://maps.yandex.ru/?ll=$longitude,$latitude&z=12");
+                  final Uri yandexMapsWebUri = Uri.parse(
+                      "https://yandex.com/maps/?ll=$longitude,$latitude&z=12");
+
+                  if (Platform.isAndroid) {
+                    if (await canLaunchUrl(yandexMapsUri)) {
+                      await launchUrl(yandexMapsUri);
+                    } else if (await canLaunchUrl(googleMapsUri)) {
+                      await launchUrl(googleMapsUri);
+                    } else {
+                      await launchUrl(googleMapsWebUri);
+                    }
+                  } else if (Platform.isIOS) {
+                    if (await canLaunchUrl(yandexMapsUri)) {
+                      await launchUrl(yandexMapsUri);
+                    } else if (await canLaunchUrl(appleMapsUri)) {
+                      await launchUrl(appleMapsUri);
+                    } else {
+                      await launchUrl(yandexMapsWebUri);
+                    }
+                  } else {
+                    await launchUrl(googleMapsWebUri);
+                  }
+                },
+                initialZoom: 16,
+                initialCenter: LatLng(latitude, longitude),
+                maxZoom: 30,
+                minZoom: 10,
+              ),
+              children: [
+                TileLayer(
+                  urlTemplate:
+                      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                  subdomains: ['a', 'b', 'c'],
+                ),
+                MarkerLayer(
+                  markers: [
+                    Marker(
+                      point: LatLng(latitude, longitude),
+                      width: 40,
+                      height: 40,
+                      child: const Icon(
+                        Icons.location_pin,
+                        color: Colors.red,
+                        size: 40,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
