@@ -31,23 +31,56 @@ class _Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            "Kategoriyalar",
-            style: context.display,
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [],
+    final controller = Get.find<HomeController>();
+    return Obx(
+      () => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "Kategoriyalar",
+              style: context.display,
             ),
-          ),
-        ],
+            controller.isLoadingCategories.value
+                ? Center(
+                    child: CircularProgressIndicator.adaptive(),
+                  )
+                : SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                        controller.categories.value.length,
+                        (int index) {
+                          final cat = controller.categories.value[index];
+                          return CupertinoButton(
+                            padding: EdgeInsets.zero,
+                            onPressed: () {
+                              Get.offNamed(AppRoutes.category);
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 8,
+                              ),
+                              margin: EdgeInsets.symmetric(horizontal: 5),
+                              decoration: BoxDecoration(
+                                color: context.dividerColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text(
+                                cat.name,
+                                style: context.subtitle,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+          ],
+        ),
       ),
     );
   }

@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
           Obx(
             () => LoadingPage(
               Get.find<HomeController>().isLoadingFurniture.value,
+              colorNeeded: false,
             ),
           ),
         ],

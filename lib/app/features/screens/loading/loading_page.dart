@@ -3,8 +3,13 @@ import 'package:wordly_project/utils/extenstions/color_extension.dart';
 
 class LoadingPage extends StatelessWidget {
   final bool isLoading;
+  final bool colorNeeded;
 
-  const LoadingPage(this.isLoading, {super.key});
+  const LoadingPage(
+    this.isLoading, {
+    super.key,
+    this.colorNeeded = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,8 @@ class LoadingPage extends StatelessWidget {
         ? AbsorbPointer(
             child: Container(
               decoration: BoxDecoration(
-                color: context.primary.withValues(alpha: .1),
+                color:
+                    colorNeeded ? context.primary.withValues(alpha: .1) : null,
               ),
               child: Center(
                 child: CircularProgressIndicator.adaptive(),

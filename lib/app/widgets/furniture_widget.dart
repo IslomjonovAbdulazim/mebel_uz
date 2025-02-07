@@ -19,13 +19,9 @@ class FurnitureWidget extends StatelessWidget {
         Get.toNamed(AppRoutes.detail, arguments: furniture.model);
       },
       child: Container(
-        padding: EdgeInsets.only(
-          left: 10,
-          right: 10,
-          bottom: 10,
-        ),
+        padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: context.cardColor,
+          color: context.dividerColor,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -33,7 +29,6 @@ class FurnitureWidget extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: context.backgroundColor,
@@ -44,6 +39,7 @@ class FurnitureWidget extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 4),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(

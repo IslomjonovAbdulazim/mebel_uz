@@ -19,8 +19,8 @@ class HomeController extends GetxController {
   }
 
   Future<void> init() async {
-    await loadProducts();
-    await loadCategories();
+    loadProducts();
+    loadCategories();
   }
 
   Future<void> loadProducts() async {
