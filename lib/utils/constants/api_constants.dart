@@ -1,5 +1,5 @@
 class ApiConstants {
-  static const String baseURL = "http://5.42.220.153:8003/";
+  static const String baseURL = "http://10.10.5.125:8001/";
 
   /// HOME
   static const String allFurniture = "/api/v1/furniture/";// query for category related furniture
