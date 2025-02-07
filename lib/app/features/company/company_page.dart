@@ -14,7 +14,6 @@ class CompanyPage extends StatelessWidget {
           height: 150,
           alignment: Alignment.centerLeft,
         ),
-
       ),
     );
   }
