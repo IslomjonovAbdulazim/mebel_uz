@@ -12,7 +12,7 @@ class _Furniture extends StatelessWidget {
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 10,
+          crossAxisSpacing: 5,
           mainAxisSpacing: 10,
           childAspectRatio: 3 / 4,
         ),
@@ -33,54 +33,54 @@ class _Categories extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<HomeController>();
     return Obx(
-      () => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
+      () => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
               "Kategoriyalar",
               style: context.display,
             ),
-            controller.isLoadingCategories.value
-                ? Center(
-                    child: CircularProgressIndicator.adaptive(),
-                  )
-                : SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: List.generate(
-                        controller.categories.value.length,
-                        (int index) {
-                          final cat = controller.categories.value[index];
-                          return CupertinoButton(
-                            padding: EdgeInsets.zero,
-                            onPressed: () {
-                              Get.offNamed(AppRoutes.category);
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 8,
-                              ),
-                              margin: EdgeInsets.symmetric(horizontal: 5),
-                              decoration: BoxDecoration(
-                                color: context.dividerColor,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Text(
-                                cat.name,
-                                style: context.subtitle,
-                              ),
+          ),
+          controller.isLoadingCategories.value
+              ? Center(
+                  child: CircularProgressIndicator.adaptive(),
+                )
+              : SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                      controller.categories.value.length,
+                      (int index) {
+                        final cat = controller.categories.value[index];
+                        return CupertinoButton(
+                          padding: EdgeInsets.zero,
+                          onPressed: () {
+                            Get.toNamed(AppRoutes.category);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 8,
                             ),
-                          );
-                        },
-                      ),
+                            margin: EdgeInsets.symmetric(horizontal: 5),
+                            decoration: BoxDecoration(
+                              color: context.dividerColor,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Text(
+                              cat.name,
+                              style: context.subtitle,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
-          ],
-        ),
+                ),
+        ],
       ),
     );
   }
