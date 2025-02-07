@@ -10,4 +10,5 @@ class IconConstants {
   static const String website = 'assets/icons/website.png';
   static const String tgBot = 'assets/icons/tg-bot.png';
   static const String location = 'assets/icons/location.png';
+  static const String admin = 'assets/icons/location.png';
 }

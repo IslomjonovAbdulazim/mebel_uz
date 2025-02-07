@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
           CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
-              Get.toNamed(AppRoutes.contact);
+              Get.toNamed(AppRoutes.company);
             },
             child: Image.asset(
               IconConstants.phone,
