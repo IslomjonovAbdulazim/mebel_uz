@@ -10,6 +10,20 @@ android {
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
+    flavorDimensions "appIcon"
+    productFlavors {
+        light {
+            dimension "appIcon"
+            applicationIdSuffix ".light"
+            // other flavor-specific config if needed
+        }
+        dark {
+            dimension "appIcon"
+            applicationIdSuffix ".dark"
+            // other flavor-specific config if needed
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
