@@ -13,25 +13,25 @@ part 'home_api_client.g.dart';
 abstract class HomeApiClient {
   factory HomeApiClient(Dio dio, {String baseUrl}) = _HomeApiClient;
 
-  @POST(ApiConstants.allFurniture)
+  @GET(ApiConstants.allFurniture)
   Future<List<FurnitureModel>> allFurniture();
 
-  @POST(ApiConstants.detailFurniture)
+  @GET(ApiConstants.detailFurniture)
   Future<DetailFurnitureModel> detailFurniture(
     @Path("furniture_id") String id,
   );
 
-  @POST(ApiConstants.allCategories)
+  @GET(ApiConstants.allCategories)
   Future<List<CategoryModel>> allCategories();
 
-  @POST(ApiConstants.categoryRelatedFurniture)
+  @GET(ApiConstants.categoryRelatedFurniture)
   Future<List<FurnitureModel>> categoryRelatedFurniture(
     @Path("category_id") String id,
   );
 
-  @POST(ApiConstants.discountFurniture)
+  @GET(ApiConstants.discountFurniture)
   Future<List<FurnitureModel>> discountFurniture();
 
-  @POST(ApiConstants.company)
+  @GET(ApiConstants.company)
   Future<CompanyModel> company();
 }

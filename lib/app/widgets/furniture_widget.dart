@@ -36,7 +36,7 @@ class FurnitureWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Image.network(
-                  furniture.images[0],
+                  furniture.images.first,
                 ),
               ),
             ),

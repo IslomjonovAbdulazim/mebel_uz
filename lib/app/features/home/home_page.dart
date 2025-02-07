@@ -5,7 +5,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Logger.log("--------------");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: context.backgroundColor,
@@ -32,32 +31,22 @@ class HomePage extends StatelessWidget {
         ],
         centerTitle: false,
       ),
-      body: Stack(
-        children: [
-          SafeArea(
-            child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              children: [
-                _Categories(),
-                SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    "Mahsulotlar",
-                    style: context.display,
-                  ),
-                ),
-                _Furniture(),
-              ],
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          children: [
+            _Categories(),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                "Mahsulotlar",
+                style: context.display,
+              ),
             ),
-          ),
-          Obx(
-            () => LoadingPage(
-              Get.find<HomeController>().isLoadingFurniture.value,
-              colorNeeded: false,
-            ),
-          ),
-        ],
+            _Furniture(),
+          ],
+        ),
       ),
     );
   }

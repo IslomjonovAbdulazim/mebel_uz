@@ -19,15 +19,14 @@ class HomeController extends GetxController {
   }
 
   Future<void> init() async {
-    loadProducts();
-    loadCategories();
+    await loadProducts();
+    await loadCategories();
   }
 
   Future<void> loadProducts() async {
     isLoadingFurniture.value = true;
     final api = Get.find<HomeRepository>();
     final result = await api.allFurniture();
-    await Future.delayed(Duration(seconds: 1));
     isLoadingFurniture.value = false;
 
     result.fold(
@@ -42,29 +41,12 @@ class HomeController extends GetxController {
         }
       },
     );
-    List images = [
-      "assets/images/fur1.png",
-      "assets/images/fur2.png",
-      "assets/images/fur3.png",
-    ];
-
-    furniture.value = List.generate(10, (int index) {
-      return FurnitureEntity(
-        id: -1,
-        price: faker.currency.random.integer(10000000, min: 100000),
-        name: '',
-        discount: false,
-        discountPercent: null,
-        images: [],
-      );
-    });
   }
 
   Future<void> loadCategories() async {
     isLoadingCategories.value = true;
     final api = Get.find<HomeRepository>();
     final result = await api.allCategories();
-    await Future.delayed(Duration(seconds: 1));
     isLoadingCategories.value = false;
 
     result.fold(
@@ -79,18 +61,5 @@ class HomeController extends GetxController {
         }
       },
     );
-    List images = [
-      "assets/images/fur1.png",
-      "assets/images/fur2.png",
-      "assets/images/fur3.png",
-    ];
-
-    categories.value = List.generate(10, (int index) {
-      return CategoryEntity(
-        id: "-1",
-        image: images[index % 3],
-        name: faker.lorem.word(),
-      );
-    });
   }
 }

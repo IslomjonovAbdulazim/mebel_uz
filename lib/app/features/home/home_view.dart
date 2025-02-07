@@ -7,21 +7,25 @@ class _Furniture extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<HomeController>();
     return Obx(
-      () => GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-          childAspectRatio: 3 / 4,
-        ),
-        itemCount: controller.furniture.value.length,
-        itemBuilder: (_, int index) {
-          final furniture = controller.furniture.value[index];
-          return FurnitureWidget(furniture: furniture);
-        },
-      ),
+      () => controller.isLoadingFurniture.value
+          ? Center(
+              child: CircularProgressIndicator.adaptive(),
+            )
+          : GridView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                childAspectRatio: 3 / 4,
+              ),
+              itemCount: controller.furniture.value.length,
+              itemBuilder: (_, int index) {
+                final furniture = controller.furniture.value[index];
+                return FurnitureWidget(furniture: furniture);
+              },
+            ),
     );
   }
 }
