@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:wordly_project/app/data/models/company_model.dart';
 import 'package:wordly_project/domain/entities/category_entity.dart';
+import 'package:wordly_project/domain/entities/company_entity.dart';
 
 import '../../utils/errors/network_failure.dart';
 import '../entities/detail_furniture_entity.dart';
@@ -18,4 +20,6 @@ abstract class HomeRepository {
       categoryRelatedFurniture(String categoryId);
 
   Future<Either<NetworkFailure, List<FurnitureEntity>>> discountFurniture();
+
+  Future<Either<NetworkFailure, CompanyEntity>> company();
 }

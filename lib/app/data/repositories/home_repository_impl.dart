@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:wordly_project/app/data/models/category_model.dart';
+import 'package:wordly_project/app/data/models/company_model.dart';
 import 'package:wordly_project/app/data/models/detail_furniture_model.dart';
 import 'package:wordly_project/app/data/models/furniture_model.dart';
 import 'package:wordly_project/domain/entities/category_entity.dart';
+import 'package:wordly_project/domain/entities/company_entity.dart';
 import 'package:wordly_project/domain/entities/detail_furniture_entity.dart';
 import 'package:wordly_project/domain/entities/furniture_entity.dart';
 
@@ -94,6 +96,21 @@ class HomeRepositoryImpl extends HomeRepository {
     try {
       final furniture = await apiClient.discountFurniture();
       return Right(furniture.map((f) => f.toEntity()).toList());
+    } on DioException catch (e) {
+      return Left(
+        NetworkFailure(
+          message: e.response?.statusMessage,
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<NetworkFailure, CompanyEntity>> company() async {
+    try {
+      final company = await apiClient.company();
+      return Right(company.toEntity());
     } on DioException catch (e) {
       return Left(
         NetworkFailure(

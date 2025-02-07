@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:wordly_project/app/data/models/category_model.dart';
+import 'package:wordly_project/app/data/models/company_model.dart';
 
 import '../../../utils/constants/api_constants.dart';
 import '../models/detail_furniture_model.dart';
@@ -30,4 +31,7 @@ abstract class HomeApiClient {
 
   @POST(ApiConstants.discountFurniture)
   Future<List<FurnitureModel>> discountFurniture();
+
+  @POST(ApiConstants.company)
+  Future<CompanyModel> company();
 }
