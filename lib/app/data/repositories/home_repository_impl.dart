@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:wordly_project/app/data/models/category_model.dart';
 import 'package:wordly_project/app/data/models/detail_furniture_model.dart';
 import 'package:wordly_project/app/data/models/furniture_model.dart';
+import 'package:wordly_project/domain/entities/category_entity.dart';
 import 'package:wordly_project/domain/entities/detail_furniture_entity.dart';
 import 'package:wordly_project/domain/entities/furniture_entity.dart';
 
@@ -45,6 +47,21 @@ class HomeRepositoryImpl extends HomeRepository {
     try {
       final furniture = await apiClient.detailFurniture(id);
       return Right(furniture.toEntity());
+    } on DioException catch (e) {
+      return Left(
+        NetworkFailure(
+          message: e.response?.statusMessage,
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<NetworkFailure, List<CategoryEntity>>> allCategories() async {
+    try {
+      final categories = await apiClient.allCategories();
+      return Right(categories.map((cat) => cat.toEntity()).toList());
     } on DioException catch (e) {
       return Left(
         NetworkFailure(

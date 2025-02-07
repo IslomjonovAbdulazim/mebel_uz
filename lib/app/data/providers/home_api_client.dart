@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:wordly_project/app/data/models/category_model.dart';
 
 import '../../../utils/constants/api_constants.dart';
 import '../models/detail_furniture_model.dart';
@@ -18,4 +19,7 @@ abstract class HomeApiClient {
   Future<DetailFurnitureModel> detailFurniture(
     @Path("furniture_id") String id,
   );
+
+  @POST(ApiConstants.allCategories)
+  Future<List<CategoryModel>> allCategories();
 }

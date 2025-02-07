@@ -4,4 +4,5 @@ class ApiConstants {
   /// HOME
   static const String allFurniture = "/api/v1/furniture/";
   static const String detailFurniture = "/api/v1/furniture/{furniture_id}/";
+  static const String allCategories = "/api/v1/categories/";
 }
