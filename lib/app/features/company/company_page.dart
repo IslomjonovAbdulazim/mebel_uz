@@ -16,10 +16,13 @@ class CompanyPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Center(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
             _SocialAccounts(),
+            Divider(color: context.dividerColor),
+            _Contact(),
           ],
         ),
       ),

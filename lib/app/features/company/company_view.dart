@@ -96,6 +96,53 @@ class _SocialAccounts extends StatelessWidget {
         CupertinoButton(
           padding: EdgeInsets.zero,
           onPressed: () async {
+            final url = "https://t.me/vkmusbot";
+            if (await canLaunchUrl(Uri.parse(url))) {
+              await launchUrl(Uri.parse(url),
+                  mode: LaunchMode.externalApplication);
+            } else {
+              throw 'Could not launch $url';
+            }
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Image.asset(
+                IconConstants.tgBot,
+                height: 35,
+                color: context.textPrimary,
+              ),
+              SizedBox(width: 10),
+              Text(
+                "Website",
+                style: context.title,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 5),
+
+      ],
+    );
+  }
+}
+
+class _Contact extends StatelessWidget {
+  const _Contact();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          "Bog'lanish",
+          style: context.display,
+        ),
+        SizedBox(height: 5),
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () async {
             final url = "tel:+998901234567";
             if (await canLaunchUrl(Uri.parse(url))) {
               await launchUrl(Uri.parse(url),
@@ -109,11 +156,69 @@ class _SocialAccounts extends StatelessWidget {
             children: [
               Image.asset(
                 IconConstants.phone,
-                height: 35,
+                height: 30,
+                color: context.textPrimary,
               ),
               SizedBox(width: 10),
               Text(
-                "Phone Number",
+                "(90)  123-45-67",
+                style: context.title,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 5),
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () async {
+            final url = "tel:+998901234567";
+            if (await canLaunchUrl(Uri.parse(url))) {
+              await launchUrl(Uri.parse(url),
+                  mode: LaunchMode.externalApplication);
+            } else {
+              throw 'Could not launch $url';
+            }
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                IconConstants.phone,
+                height: 30,
+                color: context.textPrimary,
+              ),
+              SizedBox(width: 10),
+              Text(
+                "(90)  123-45-67",
+                style: context.title,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 5),
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () async {
+            final url = "https://t.me/abduazim_islomjonov";
+            if (await canLaunchUrl(Uri.parse(url))) {
+              await launchUrl(Uri.parse(url),
+                  mode: LaunchMode.externalApplication);
+            } else {
+              throw 'Could not launch $url';
+            }
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Image.asset(
+                IconConstants.admin,
+                height: 30,
+                color: context.textPrimary,
+              ),
+              SizedBox(width: 10),
+              Text(
+                "Abduazim   Islomjonov",
                 style: context.title,
               ),
             ],
@@ -123,3 +228,4 @@ class _SocialAccounts extends StatelessWidget {
     );
   }
 }
+
