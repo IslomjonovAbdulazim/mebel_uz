@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:wordly_project/app/data/models/detail_furniture_model.dart';
 import 'package:wordly_project/app/data/models/furniture_model.dart';
+import 'package:wordly_project/domain/entities/detail_furniture_entity.dart';
 import 'package:wordly_project/domain/entities/furniture_entity.dart';
 
 import '../../../domain/respositories/home_repository.dart';
@@ -38,11 +39,12 @@ class HomeRepositoryImpl extends HomeRepository {
   }
 
   @override
-  Future<Either<NetworkFailure, DetailFurnitureModel>> detailFurniture(
-      String id) async {
+  Future<Either<NetworkFailure, DetailFurnitureEntity>> detailFurniture(
+    String id,
+  ) async {
     try {
-      final furniture = await apiClient.allFurniture();
-      return Right(furniture.map((f) => f.toEntity()).toList());
+      final furniture = await apiClient.detailFurniture(id);
+      return Right(furniture.toEntity());
     } on DioException catch (e) {
       return Left(
         NetworkFailure(
