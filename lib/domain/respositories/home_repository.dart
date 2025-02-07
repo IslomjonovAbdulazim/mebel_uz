@@ -13,4 +13,9 @@ abstract class HomeRepository {
   );
 
   Future<Either<NetworkFailure, List<CategoryEntity>>> allCategories();
+
+  Future<Either<NetworkFailure, List<FurnitureEntity>>>
+      categoryRelatedFurniture(String categoryId);
+
+  Future<Either<NetworkFailure, List<FurnitureEntity>>> discountFurniture();
 }

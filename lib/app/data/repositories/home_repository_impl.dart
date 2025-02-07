@@ -71,4 +71,36 @@ class HomeRepositoryImpl extends HomeRepository {
       );
     }
   }
+
+  @override
+  Future<Either<NetworkFailure, List<FurnitureEntity>>>
+      categoryRelatedFurniture(String categoryId) async {
+    try {
+      final furniture = await apiClient.categoryRelatedFurniture(categoryId);
+      return Right(furniture.map((f) => f.toEntity()).toList());
+    } on DioException catch (e) {
+      return Left(
+        NetworkFailure(
+          message: e.response?.statusMessage,
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<NetworkFailure, List<FurnitureEntity>>>
+      discountFurniture() async {
+    try {
+      final furniture = await apiClient.discountFurniture();
+      return Right(furniture.map((f) => f.toEntity()).toList());
+    } on DioException catch (e) {
+      return Left(
+        NetworkFailure(
+          message: e.response?.statusMessage,
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    }
+  }
 }

@@ -22,4 +22,12 @@ abstract class HomeApiClient {
 
   @POST(ApiConstants.allCategories)
   Future<List<CategoryModel>> allCategories();
+
+  @POST(ApiConstants.categoryRelatedFurniture)
+  Future<List<FurnitureModel>> categoryRelatedFurniture(
+    @Path("category_id") String id,
+  );
+
+  @POST(ApiConstants.discountFurniture)
+  Future<List<FurnitureModel>> discountFurniture();
 }
