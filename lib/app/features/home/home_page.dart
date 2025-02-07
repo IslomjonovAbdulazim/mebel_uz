@@ -8,6 +8,8 @@ class HomePage extends StatelessWidget {
     Logger.log("--------------");
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: context.backgroundColor,
+        surfaceTintColor: context.backgroundColor,
         title: Image.asset(
           BrandConstants.long,
           height: 150,
@@ -16,10 +18,14 @@ class HomePage extends StatelessWidget {
         actions: [
           CupertinoButton(
             padding: EdgeInsets.zero,
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed(AppRoutes.contact);
+            },
             child: Image.asset(
-              BrandConstants.short,
+              IconConstants.phone,
+              color: context.textPrimary,
               alignment: Alignment.centerLeft,
+              height: 35,
             ),
           ),
           SizedBox(width: 10),
