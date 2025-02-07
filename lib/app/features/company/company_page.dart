@@ -16,5 +16,6 @@ class CompanyPage extends StatelessWidget {
         ),
       ),
     );
+
   }
 }
