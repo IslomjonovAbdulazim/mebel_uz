@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:wordly_project/app/controllers/home_controller.dart';
 import 'package:wordly_project/app/features/screens/loading/loading_page.dart';
 import 'package:wordly_project/app/routes/app_routes.dart';

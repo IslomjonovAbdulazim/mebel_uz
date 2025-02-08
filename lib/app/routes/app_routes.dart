@@ -1,6 +1,6 @@
 class AppRoutes {
   static const String home = "/home";
-  static const String detail = "$home/detail";
+  static const String detail = "$home/detail";// todo remove
   static const String discount = "$home/discount";
   static const String category = "$home/category";
   static const String company = "$home/company";

@@ -27,6 +27,7 @@ class HomeController extends GetxController {
     isLoadingFurniture.value = true;
     final api = Get.find<HomeRepository>();
     final result = await api.allFurniture();
+    await Future.delayed(Duration(seconds: 2));
     isLoadingFurniture.value = false;
 
     result.fold(
@@ -41,6 +42,21 @@ class HomeController extends GetxController {
         }
       },
     );
+    furniture.value = List.generate(10, (int index) {
+      return FurnitureEntity(
+        id: -1,
+        name: faker.person.name(),
+        price: faker.currency.random.integer(
+          10000000,
+          min: 100000,
+        ),
+        discount: false,
+        discountPercent: null,
+        images: [
+          faker.image.loremPicsum(random: index),
+        ],
+      );
+    });
   }
 
   Future<void> loadCategories() async {
@@ -61,5 +77,12 @@ class HomeController extends GetxController {
         }
       },
     );
+
+    categories.value = List.generate(10, (int index) {
+      return CategoryEntity(
+        id: -1,
+        name: faker.lorem.words(2).join(" "),
+      );
+    });
   }
 }

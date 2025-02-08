@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:wordly_project/app/routes/app_routes.dart';
 import 'package:wordly_project/domain/entities/furniture_entity.dart';
+import 'package:wordly_project/utils/constants/icon_constants.dart';
 import 'package:wordly_project/utils/extenstions/color_extension.dart';
 import 'package:wordly_project/utils/extenstions/text_style_extention.dart';
 import 'package:wordly_project/utils/helpers/number_formatter_helper.dart';
@@ -30,14 +31,25 @@ class FurnitureWidget extends StatelessWidget {
             Expanded(
               child: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: context.backgroundColor,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Image.network(
-                  furniture.images.first,
-                ),
+                child: furniture.images.isEmpty
+                    ? Container(
+                        margin: EdgeInsets.all(40),
+                        child: Image.asset(
+                          IconConstants.placeholder,
+                          color: context.textPrimary,
+                        ),
+                      )
+                    : ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.network(
+                          furniture.images.first,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
               ),
             ),
             SizedBox(height: 6),
@@ -46,7 +58,7 @@ class FurnitureWidget extends StatelessWidget {
               child: Text(
                 furniture.name,
                 style: context.title,
-                maxLines: 2,
+                maxLines: 1,
               ),
             ),
             SizedBox(height: 4),
@@ -55,7 +67,7 @@ class FurnitureWidget extends StatelessWidget {
               child: Text(
                 "${NumberFormatterHelper.formatWithSeparator(furniture.price)}  UZS",
                 style: context.price,
-                maxLines: 2,
+                maxLines: 1,
               ),
             ),
           ],

@@ -8,8 +8,12 @@ class _Furniture extends StatelessWidget {
     final controller = Get.find<HomeController>();
     return Obx(
       () => controller.isLoadingFurniture.value
-          ? Center(
-              child: CircularProgressIndicator.adaptive(),
+          ? SizedBox(
+              height: 450,
+              width: 300,
+              child: Center(
+                child: CircularProgressIndicator.adaptive(),
+              ),
             )
           : GridView.builder(
               physics: NeverScrollableScrollPhysics(),

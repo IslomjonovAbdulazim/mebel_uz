@@ -9,7 +9,6 @@ class CategoryModel with _$CategoryModel {
   const factory CategoryModel({
     required int id,
     required String name,
-    String? image,
   }) = _CategoryModel;
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) =>
@@ -18,6 +17,6 @@ class CategoryModel with _$CategoryModel {
 
 extension CategoryModelX on CategoryModel {
   CategoryEntity toEntity() {
-    return CategoryEntity(id: id, name: name, image: image);
+    return CategoryEntity(id: id, name: name);
   }
 }
