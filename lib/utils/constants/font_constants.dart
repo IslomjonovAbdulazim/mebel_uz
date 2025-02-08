@@ -3,4 +3,3 @@ class FontConstants {
 
   static const String clashDisplay = "ClashDisplay";
 }
-
