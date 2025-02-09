@@ -55,7 +55,6 @@ class FurnitureWidget extends StatelessWidget {
                             Icons.error,
                             color: context.error,
                           ),
-
                           fit: BoxFit.cover,
                         ),
                       ),
