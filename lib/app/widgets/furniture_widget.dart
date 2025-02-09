@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wordly_project/app/routes/app_routes.dart';
 import 'package:wordly_project/domain/entities/furniture_entity.dart';
@@ -45,8 +47,14 @@ class FurnitureWidget extends StatelessWidget {
                       )
                     : ClipRRect(
                         borderRadius: BorderRadius.circular(15),
-                        child: Image.network(
-                          furniture.images.first,
+                        child: CachedNetworkImage(
+                          imageUrl: furniture.images[0],
+                          placeholder: (context, url) =>
+                              CircularProgressIndicator.adaptive(),
+                          errorWidget: (context, url, error) => Icon(
+                            Icons.error,
+                            color: context.error,
+                          ),
                           fit: BoxFit.cover,
                         ),
                       ),
