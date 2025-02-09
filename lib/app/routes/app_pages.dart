@@ -4,7 +4,6 @@ import '../bindings/company_binding.dart';
 import '../bindings/contact_binding.dart';
 import '../bindings/detail_binding.dart';
 import '../bindings/home_binding.dart';
-import '../bindings/home_repository_iml_binding.dart';
 import '../features/category/imports.dart';
 import '../features/company/imports.dart';
 import '../features/contact/imports.dart';
@@ -25,7 +24,6 @@ class AppPages {
       page: () => HomePage(),
       bindings: [
         HomeBinding(),
-        HomeRepositoryImlBinding(),
       ],
     ),
     GetPage(
