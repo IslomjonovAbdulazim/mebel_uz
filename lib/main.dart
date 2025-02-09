@@ -22,6 +22,7 @@ void main() async {
   ]);
   await GetStorage.init();
   Get.put(ThemeController());
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
   runApp(const MyApp());
 }
 
