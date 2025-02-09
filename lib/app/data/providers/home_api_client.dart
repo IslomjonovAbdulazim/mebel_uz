@@ -14,7 +14,6 @@ abstract class HomeApiClient {
   factory HomeApiClient(Dio dio, {String baseUrl}) = _HomeApiClient;
 
   @GET(ApiConstants.allFurniture)
-
   Future<List<FurnitureModel>> allFurniture();
 
   @GET(ApiConstants.detailFurniture)
