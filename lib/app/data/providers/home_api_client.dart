@@ -16,6 +16,7 @@ abstract class HomeApiClient {
   @GET(ApiConstants.allFurniture)
   Future<List<FurnitureModel>> allFurniture();
 
+
   @GET(ApiConstants.detailFurniture)
   Future<DetailFurnitureModel> detailFurniture(
     @Path("furniture_id") String id,
