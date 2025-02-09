@@ -22,7 +22,6 @@ abstract class HomeApiClient {
   );
 
   @GET(ApiConstants.allCategories)
-
   Future<List<CategoryModel>> allCategories();
 
   @GET(ApiConstants.categoryRelatedFurniture)
