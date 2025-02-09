@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:wordly_project/domain/entities/category_entity.dart';
+import 'package:wordly_project/utils/helpers/logger.dart';
 
 import '../../domain/entities/furniture_entity.dart';
 import '../../domain/respositories/home_repository.dart';
@@ -14,8 +15,8 @@ class HomeController extends GetxController {
 
   @override
   void onInit() {
-    init();
     super.onInit();
+    init();
   }
 
   Future<void> init() async {
@@ -26,7 +27,9 @@ class HomeController extends GetxController {
   Future<void> loadProducts() async {
     isLoadingFurniture.value = true;
     final api = Get.find<HomeRepository>();
+    Logger.log("-------");
     final result = await api.allFurniture();
+    Logger.log("-------");
     // await Future.delayed(Duration(seconds: 2));
     isLoadingFurniture.value = false;
 

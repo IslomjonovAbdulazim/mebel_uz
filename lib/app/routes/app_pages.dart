@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:wordly_project/app/bindings/category_binding.dart';
 
 import '../bindings/company_binding.dart';
 import '../bindings/contact_binding.dart';
@@ -58,7 +59,7 @@ class AppPages {
       name: AppRoutes.category,
       page: () => CategoryPage(),
       bindings: [
-        ContactBinding(),
+        CategoryBinding(),
       ],
     ),
   ];
