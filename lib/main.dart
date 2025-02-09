@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:wordly_project/app/bindings/home_repository_iml_binding.dart';
 
+import 'app/bindings/initial_binding.dart';
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 import 'utils/services/connectivity_service.dart';
@@ -47,12 +47,13 @@ class _MyAppState extends State<MyApp> {
     final ThemeController themeController = Get.find<ThemeController>();
     return Obx(() {
       return GetMaterialApp(
-        title: 'Mebel Uz',
+        title: 'Mebel',
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         themeMode: themeController.themeMode,
         debugShowCheckedModeBanner: false,
         initialRoute: AppRoutes.home,
+        initialBinding: InitialBinding(),
         getPages: AppPages.pages,
         builder: (context, child) => MediaQuery(
           data: MediaQuery.of(context).copyWith(
