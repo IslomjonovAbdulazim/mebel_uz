@@ -21,6 +21,7 @@ abstract class HomeApiClient {
     @Path("furniture_id") String id,
   );
 
+
   @GET(ApiConstants.allCategories)
   Future<List<CategoryModel>> allCategories();
 
