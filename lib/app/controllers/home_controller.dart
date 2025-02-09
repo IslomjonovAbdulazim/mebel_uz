@@ -27,7 +27,7 @@ class HomeController extends GetxController {
     isLoadingFurniture.value = true;
     final api = Get.find<HomeRepository>();
     final result = await api.allFurniture();
-    await Future.delayed(Duration(seconds: 2));
+    // await Future.delayed(Duration(seconds: 2));
     isLoadingFurniture.value = false;
 
     result.fold(
