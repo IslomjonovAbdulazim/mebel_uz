@@ -67,7 +67,7 @@ class _Categories extends StatelessWidget {
                         return CupertinoButton(
                           padding: EdgeInsets.zero,
                           onPressed: () {
-                            Get.toNamed(AppRoutes.category);
+                            Get.toNamed(AppRoutes.category, arguments: cat);
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(

@@ -27,9 +27,7 @@ class HomeController extends GetxController {
   Future<void> loadProducts() async {
     isLoadingFurniture.value = true;
     final api = Get.find<HomeRepository>();
-    Logger.log("-------");
     // final result = await api.allFurniture();
-    Logger.log("-------");
     isLoadingFurniture.value = false;
 
     // result.fold(

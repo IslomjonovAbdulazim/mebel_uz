@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:wordly_project/app/data/models/category_model.dart';
 
 import '../data/models/detail_furniture_model.dart';
 
