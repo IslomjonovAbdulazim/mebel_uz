@@ -11,7 +11,6 @@ class DetailController extends GetxController {
     init();
     super.onInit();
 
-
   }
 
   Future<void> init() async {
