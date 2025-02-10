@@ -18,4 +18,3 @@ class DetailController extends GetxController {
   }
 }
 
-
