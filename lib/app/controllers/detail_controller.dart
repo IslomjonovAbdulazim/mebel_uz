@@ -12,6 +12,8 @@ class DetailController extends GetxController {
     super.onInit();
   }
 
+
+
   Future<void> init() async {
     isLoading.value = true;
     isLoading.value = false;
