@@ -16,7 +16,5 @@ class DetailController extends GetxController {
     isLoading.value = true;
     isLoading.value = false;
   }
-
-
 }
 
