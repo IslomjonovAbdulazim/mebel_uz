@@ -13,7 +13,6 @@ class DetailController extends GetxController {
   }
 
 
-
   Future<void> init() async {
     isLoading.value = true;
     isLoading.value = false;
