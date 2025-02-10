@@ -10,6 +10,7 @@ class DetailController extends GetxController {
   void onInit() {
     init();
     super.onInit();
+
   }
 
   Future<void> init() async {
