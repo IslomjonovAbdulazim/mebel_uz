@@ -19,7 +19,7 @@ class FurnitureWidget extends StatelessWidget {
     return CupertinoButton(
       padding: EdgeInsets.zero,
       onPressed: () {
-        Get.toNamed(AppRoutes.detail, arguments: furniture.name);
+        Get.toNamed(AppRoutes.detail, arguments: furniture);
       },
       child: Container(
         padding: EdgeInsets.all(8),

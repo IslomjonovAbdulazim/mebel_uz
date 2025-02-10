@@ -5,14 +5,16 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final arg = Get.arguments;
+    final controller = Get.find<DetailController>();
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Text(
-          arg.toString(),
-          style: context.display,
-        ),
+        child: controller.isLoading.value
+            ? CircularProgressIndicator.adaptive()
+            : Text(
+                "arg.toString()",
+                style: context.display,
+              ),
       ),
     );
   }
