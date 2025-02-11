@@ -8,31 +8,30 @@ part of 'company_model.dart';
 
 _$CompanyModelImpl _$$CompanyModelImplFromJson(Map<String, dynamic> json) =>
     _$CompanyModelImpl(
-      instagramChannel: json['instagramChannel'] as String,
-      telegramChannel: json['telegramChannel'] as String,
+      instagram: json['instagram'] as String,
+      telegram: json['telegram'] as String,
+      youtube: json['youtube'] as String,
       website: json['website'] as String,
-      telegramBot: json['telegramBot'] as String,
-      phoneNumbers: (json['phoneNumbers'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      adminName: json['adminName'] as String,
-      adminUrl: json['adminUrl'] as String,
-      lat: (json['lat'] as num).toDouble(),
-      lan: (json['lan'] as num).toDouble(),
+      telegramBot: json['telegram_bot'] as String,
+      phones:
+          (json['phones'] as List<dynamic>).map((e) => e as String).toList(),
+      admin: json['admin'] as String,
+      lat: json['lat'] as String,
+      lon: json['lon'] as String,
       images:
           (json['images'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
     <String, dynamic>{
-      'instagramChannel': instance.instagramChannel,
-      'telegramChannel': instance.telegramChannel,
+      'instagram': instance.instagram,
+      'telegram': instance.telegram,
+      'youtube': instance.youtube,
       'website': instance.website,
-      'telegramBot': instance.telegramBot,
-      'phoneNumbers': instance.phoneNumbers,
-      'adminName': instance.adminName,
-      'adminUrl': instance.adminUrl,
+      'telegram_bot': instance.telegramBot,
+      'phones': instance.phones,
+      'admin': instance.admin,
       'lat': instance.lat,
-      'lan': instance.lan,
+      'lon': instance.lon,
       'images': instance.images,
     };

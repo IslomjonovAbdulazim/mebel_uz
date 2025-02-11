@@ -5,8 +5,14 @@ class CategoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CategoryController>();
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: context.backgroundColor,
+        surfaceTintColor: context.backgroundColor,
+        title: Text(controller.category.value.name),
+      ),
+      body: SafeArea(child: _Furniture()),
     );
   }
 }

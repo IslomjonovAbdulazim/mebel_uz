@@ -16,10 +16,7 @@ _$DetailFurnitureModelImpl _$$DetailFurnitureModelImplFromJson(
       weight: (json['weight'] as num).toDouble(),
       height: (json['height'] as num).toInt(),
       width: (json['width'] as num).toInt(),
-      discount: json['discount'] as bool,
-      discountStart: json['discount_start'] as String,
-      discountEnd: json['discount_end'] as String,
-      discountPercentage: (json['discount_percent'] as num).toInt(),
+      material: json['material'] as String?,
       images:
           (json['images'] as List<dynamic>).map((e) => e as String).toList(),
     );
@@ -34,9 +31,6 @@ Map<String, dynamic> _$$DetailFurnitureModelImplToJson(
       'weight': instance.weight,
       'height': instance.height,
       'width': instance.width,
-      'discount': instance.discount,
-      'discount_start': instance.discountStart,
-      'discount_end': instance.discountEnd,
-      'discount_percent': instance.discountPercentage,
+      'material': instance.material,
       'images': instance.images,
     };

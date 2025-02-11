@@ -11,8 +11,6 @@ _$FurnitureModelImpl _$$FurnitureModelImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       price: (json['price'] as num).toInt(),
-      discount: json['discount'] as bool,
-      discountPercent: (json['discountPercent'] as num?)?.toInt(),
       images:
           (json['images'] as List<dynamic>).map((e) => e as String).toList(),
     );
@@ -23,7 +21,5 @@ Map<String, dynamic> _$$FurnitureModelImplToJson(
       'id': instance.id,
       'name': instance.name,
       'price': instance.price,
-      'discount': instance.discount,
-      'discountPercent': instance.discountPercent,
       'images': instance.images,
     };

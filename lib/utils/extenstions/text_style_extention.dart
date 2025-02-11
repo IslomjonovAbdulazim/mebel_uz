@@ -9,6 +9,7 @@ extension TextStylesExtension on BuildContext {
         fontSize: 36,
         fontWeight: FontWeight.bold,
         color: Theme.of(this).colorScheme.onBackground,
+        height: 1,
       );
 
   /// Main headline style for section titles or key headers

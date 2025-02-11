@@ -5,6 +5,7 @@ class _SocialAccounts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CompanyController>();
     return Column(
       children: [
         Text(
@@ -15,7 +16,7 @@ class _SocialAccounts extends StatelessWidget {
         CupertinoButton(
           padding: EdgeInsets.zero,
           onPressed: () async {
-            final url = "https://instagram.com/cristiano";
+            final url = controller.company.value.instagramChannel;
             if (await canLaunchUrl(Uri.parse(url))) {
               await launchUrl(Uri.parse(url),
                   mode: LaunchMode.externalApplication);
@@ -42,7 +43,7 @@ class _SocialAccounts extends StatelessWidget {
         CupertinoButton(
           padding: EdgeInsets.zero,
           onPressed: () async {
-            final url = "https://t.me/azimdev3";
+            final url = controller.company.value.telegramChannel;
             if (await canLaunchUrl(Uri.parse(url))) {
               await launchUrl(Uri.parse(url),
                   mode: LaunchMode.externalApplication);
@@ -69,7 +70,7 @@ class _SocialAccounts extends StatelessWidget {
         CupertinoButton(
           padding: EdgeInsets.zero,
           onPressed: () async {
-            final url = "https://apple.com";
+            final url = controller.company.value.website;
             if (await canLaunchUrl(Uri.parse(url))) {
               await launchUrl(Uri.parse(url),
                   mode: LaunchMode.externalApplication);
@@ -96,7 +97,7 @@ class _SocialAccounts extends StatelessWidget {
         CupertinoButton(
           padding: EdgeInsets.zero,
           onPressed: () async {
-            final url = "https://t.me/vkmusbot";
+            final url = controller.company.value.telegramBot;
             if (await canLaunchUrl(Uri.parse(url))) {
               await launchUrl(Uri.parse(url),
                   mode: LaunchMode.externalApplication);
@@ -132,6 +133,7 @@ class _Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CompanyController>();
     return Column(
       children: [
         Text(
@@ -139,66 +141,48 @@ class _Contact extends StatelessWidget {
           style: context.display,
         ),
         SizedBox(height: 5),
-        CupertinoButton(
-          padding: EdgeInsets.zero,
-          onPressed: () async {
-            final url = "tel:+998901234567";
-            if (await canLaunchUrl(Uri.parse(url))) {
-              await launchUrl(Uri.parse(url),
-                  mode: LaunchMode.externalApplication);
-            } else {
-              throw 'Could not launch $url';
-            }
+        ...List.generate(
+          controller.company.value.phoneNumbers.length,
+          (int index) {
+            int phone = int.parse(controller.company.value.phoneNumbers[index]);
+            return Column(
+              children: [
+                CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () async {
+                    final url = "tel:+998$phone";
+                    if (await canLaunchUrl(Uri.parse(url))) {
+                      await launchUrl(Uri.parse(url),
+                          mode: LaunchMode.externalApplication);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        IconConstants.phone,
+                        height: 30,
+                        color: context.textPrimary,
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        "(90)  123-45-67",
+                        style: context.title,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 5),
+              ],
+            );
           },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                IconConstants.phone,
-                height: 30,
-                color: context.textPrimary,
-              ),
-              SizedBox(width: 10),
-              Text(
-                "(90)  123-45-67",
-                style: context.title,
-              ),
-            ],
-          ),
         ),
-        SizedBox(height: 5),
         CupertinoButton(
           padding: EdgeInsets.zero,
           onPressed: () async {
-            final url = "tel:+998901234567";
-            if (await canLaunchUrl(Uri.parse(url))) {
-              await launchUrl(Uri.parse(url),
-                  mode: LaunchMode.externalApplication);
-            } else {
-              throw 'Could not launch $url';
-            }
-          },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                IconConstants.phone,
-                height: 30,
-                color: context.textPrimary,
-              ),
-              SizedBox(width: 10),
-              Text(
-                "(90)  123-45-67",
-                style: context.title,
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: 5),
-        CupertinoButton(
-          padding: EdgeInsets.zero,
-          onPressed: () async {
-            final url = "https://t.me/abduazim_islomjonov";
+            final url = controller.company.value.adminName;
             if (await canLaunchUrl(Uri.parse(url))) {
               await launchUrl(Uri.parse(url),
                   mode: LaunchMode.externalApplication);
@@ -221,14 +205,16 @@ class _Location extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double latitude = 41.3265322;
-    double longitude = 69.2284909;
+    final controller = Get.find<CompanyController>();
+    double latitude = controller.company.value.lat;
+    double longitude = controller.company.value.lon;
     return Column(
       children: [
         Text(
           "Lokatsiya",
           style: context.display,
         ),
+        SizedBox(height: 5),
         Container(
           height: 220,
           decoration: BoxDecoration(

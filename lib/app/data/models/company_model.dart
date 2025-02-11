@@ -8,15 +8,16 @@ part 'company_model.g.dart';
 @freezed
 class CompanyModel with _$CompanyModel {
   const factory CompanyModel({
-    required String instagramChannel,
-    required String telegramChannel,
+    required String instagram,
+    required String telegram,
+    required String youtube,
     required String website,
+    @JsonKey(name: "telegram_bot")
     required String telegramBot,
-    required List<String> phoneNumbers,
-    required String adminName,
-    required String adminUrl,
-    required double lat,
-    required double lan,
+    required List<String> phones,
+    required String admin,
+    required String lat,
+    required String lon,
     required List<String> images,
   }) = _CompanyModel;
 
@@ -27,15 +28,14 @@ class CompanyModel with _$CompanyModel {
 extension CompanyModelX on CompanyModel {
   CompanyEntity toEntity() {
     return CompanyEntity(
-      instagramChannel: instagramChannel,
-      telegramChannel: telegramChannel,
+      instagramChannel: instagram,
+      telegramChannel: telegram,
       website: website,
       telegramBot: telegramBot,
-      phoneNumbers: phoneNumbers,
-      adminName: adminName,
-      adminUrl: adminUrl,
-      lat: lat,
-      lan: lan,
+      phoneNumbers: phones,
+      adminName: admin,
+      lat: double.parse(lat),
+      lon: double.parse(lon),
       images: images,
     );
   }

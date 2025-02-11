@@ -50,7 +50,9 @@ class FurnitureWidget extends StatelessWidget {
                         child: CachedNetworkImage(
                           imageUrl: furniture.images[0],
                           placeholder: (context, url) =>
-                              CircularProgressIndicator.adaptive(),
+                              CircularProgressIndicator.adaptive(
+                            backgroundColor: context.textPrimary,
+                          ),
                           errorWidget: (context, url, error) => Icon(
                             Icons.error,
                             color: context.error,

@@ -27,13 +27,7 @@ mixin _$DetailFurnitureModel {
   double get weight => throw _privateConstructorUsedError;
   int get height => throw _privateConstructorUsedError;
   int get width => throw _privateConstructorUsedError;
-  bool get discount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'discount_start')
-  String get discountStart => throw _privateConstructorUsedError;
-  @JsonKey(name: 'discount_end')
-  String get discountEnd => throw _privateConstructorUsedError;
-  @JsonKey(name: 'discount_percent')
-  int get discountPercentage => throw _privateConstructorUsedError;
+  String? get material => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
 
   /// Serializes this DetailFurnitureModel to a JSON map.
@@ -60,10 +54,7 @@ abstract class $DetailFurnitureModelCopyWith<$Res> {
       double weight,
       int height,
       int width,
-      bool discount,
-      @JsonKey(name: 'discount_start') String discountStart,
-      @JsonKey(name: 'discount_end') String discountEnd,
-      @JsonKey(name: 'discount_percent') int discountPercentage,
+      String? material,
       List<String> images});
 }
 
@@ -90,10 +81,7 @@ class _$DetailFurnitureModelCopyWithImpl<$Res,
     Object? weight = null,
     Object? height = null,
     Object? width = null,
-    Object? discount = null,
-    Object? discountStart = null,
-    Object? discountEnd = null,
-    Object? discountPercentage = null,
+    Object? material = freezed,
     Object? images = null,
   }) {
     return _then(_value.copyWith(
@@ -125,22 +113,10 @@ class _$DetailFurnitureModelCopyWithImpl<$Res,
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as int,
-      discount: null == discount
-          ? _value.discount
-          : discount // ignore: cast_nullable_to_non_nullable
-              as bool,
-      discountStart: null == discountStart
-          ? _value.discountStart
-          : discountStart // ignore: cast_nullable_to_non_nullable
-              as String,
-      discountEnd: null == discountEnd
-          ? _value.discountEnd
-          : discountEnd // ignore: cast_nullable_to_non_nullable
-              as String,
-      discountPercentage: null == discountPercentage
-          ? _value.discountPercentage
-          : discountPercentage // ignore: cast_nullable_to_non_nullable
-              as int,
+      material: freezed == material
+          ? _value.material
+          : material // ignore: cast_nullable_to_non_nullable
+              as String?,
       images: null == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
@@ -165,10 +141,7 @@ abstract class _$$DetailFurnitureModelImplCopyWith<$Res>
       double weight,
       int height,
       int width,
-      bool discount,
-      @JsonKey(name: 'discount_start') String discountStart,
-      @JsonKey(name: 'discount_end') String discountEnd,
-      @JsonKey(name: 'discount_percent') int discountPercentage,
+      String? material,
       List<String> images});
 }
 
@@ -192,10 +165,7 @@ class __$$DetailFurnitureModelImplCopyWithImpl<$Res>
     Object? weight = null,
     Object? height = null,
     Object? width = null,
-    Object? discount = null,
-    Object? discountStart = null,
-    Object? discountEnd = null,
-    Object? discountPercentage = null,
+    Object? material = freezed,
     Object? images = null,
   }) {
     return _then(_$DetailFurnitureModelImpl(
@@ -227,22 +197,10 @@ class __$$DetailFurnitureModelImplCopyWithImpl<$Res>
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as int,
-      discount: null == discount
-          ? _value.discount
-          : discount // ignore: cast_nullable_to_non_nullable
-              as bool,
-      discountStart: null == discountStart
-          ? _value.discountStart
-          : discountStart // ignore: cast_nullable_to_non_nullable
-              as String,
-      discountEnd: null == discountEnd
-          ? _value.discountEnd
-          : discountEnd // ignore: cast_nullable_to_non_nullable
-              as String,
-      discountPercentage: null == discountPercentage
-          ? _value.discountPercentage
-          : discountPercentage // ignore: cast_nullable_to_non_nullable
-              as int,
+      material: freezed == material
+          ? _value.material
+          : material // ignore: cast_nullable_to_non_nullable
+              as String?,
       images: null == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
@@ -262,10 +220,7 @@ class _$DetailFurnitureModelImpl implements _DetailFurnitureModel {
       required this.weight,
       required this.height,
       required this.width,
-      required this.discount,
-      @JsonKey(name: 'discount_start') required this.discountStart,
-      @JsonKey(name: 'discount_end') required this.discountEnd,
-      @JsonKey(name: 'discount_percent') required this.discountPercentage,
+      required this.material,
       required final List<String> images})
       : _images = images;
 
@@ -287,16 +242,7 @@ class _$DetailFurnitureModelImpl implements _DetailFurnitureModel {
   @override
   final int width;
   @override
-  final bool discount;
-  @override
-  @JsonKey(name: 'discount_start')
-  final String discountStart;
-  @override
-  @JsonKey(name: 'discount_end')
-  final String discountEnd;
-  @override
-  @JsonKey(name: 'discount_percent')
-  final int discountPercentage;
+  final String? material;
   final List<String> _images;
   @override
   List<String> get images {
@@ -307,7 +253,7 @@ class _$DetailFurnitureModelImpl implements _DetailFurnitureModel {
 
   @override
   String toString() {
-    return 'DetailFurnitureModel(id: $id, name: $name, price: $price, description: $description, weight: $weight, height: $height, width: $width, discount: $discount, discountStart: $discountStart, discountEnd: $discountEnd, discountPercentage: $discountPercentage, images: $images)';
+    return 'DetailFurnitureModel(id: $id, name: $name, price: $price, description: $description, weight: $weight, height: $height, width: $width, material: $material, images: $images)';
   }
 
   @override
@@ -323,14 +269,8 @@ class _$DetailFurnitureModelImpl implements _DetailFurnitureModel {
             (identical(other.weight, weight) || other.weight == weight) &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width) &&
-            (identical(other.discount, discount) ||
-                other.discount == discount) &&
-            (identical(other.discountStart, discountStart) ||
-                other.discountStart == discountStart) &&
-            (identical(other.discountEnd, discountEnd) ||
-                other.discountEnd == discountEnd) &&
-            (identical(other.discountPercentage, discountPercentage) ||
-                other.discountPercentage == discountPercentage) &&
+            (identical(other.material, material) ||
+                other.material == material) &&
             const DeepCollectionEquality().equals(other._images, _images));
   }
 
@@ -345,10 +285,7 @@ class _$DetailFurnitureModelImpl implements _DetailFurnitureModel {
       weight,
       height,
       width,
-      discount,
-      discountStart,
-      discountEnd,
-      discountPercentage,
+      material,
       const DeepCollectionEquality().hash(_images));
 
   /// Create a copy of DetailFurnitureModel
@@ -378,10 +315,7 @@ abstract class _DetailFurnitureModel implements DetailFurnitureModel {
       required final double weight,
       required final int height,
       required final int width,
-      required final bool discount,
-      @JsonKey(name: 'discount_start') required final String discountStart,
-      @JsonKey(name: 'discount_end') required final String discountEnd,
-      @JsonKey(name: 'discount_percent') required final int discountPercentage,
+      required final String? material,
       required final List<String> images}) = _$DetailFurnitureModelImpl;
 
   factory _DetailFurnitureModel.fromJson(Map<String, dynamic> json) =
@@ -402,16 +336,7 @@ abstract class _DetailFurnitureModel implements DetailFurnitureModel {
   @override
   int get width;
   @override
-  bool get discount;
-  @override
-  @JsonKey(name: 'discount_start')
-  String get discountStart;
-  @override
-  @JsonKey(name: 'discount_end')
-  String get discountEnd;
-  @override
-  @JsonKey(name: 'discount_percent')
-  int get discountPercentage;
+  String? get material;
   @override
   List<String> get images;
 

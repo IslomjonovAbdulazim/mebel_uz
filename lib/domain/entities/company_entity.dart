@@ -5,9 +5,8 @@ class CompanyEntity {
   final String telegramBot;
   final List<String> phoneNumbers;
   final String adminName;
-  final String adminUrl;
   final double lat;
-  final double lan;
+  final double lon;
   final List<String> images;
 
   CompanyEntity({
@@ -17,9 +16,23 @@ class CompanyEntity {
     required this.telegramBot,
     required this.phoneNumbers,
     required this.adminName,
-    required this.adminUrl,
     required this.lat,
-    required this.lan,
+    required this.lon,
     required this.images,
   });
 }
+
+final fakeCompany = CompanyEntity(
+  instagramChannel: "https://www.instagram.com/fake_company",
+  telegramChannel: "https://t.me/fake_company",
+  website: "https://fakecompany.com",
+  telegramBot: "https://t.me/FakeBot",
+  phoneNumbers: ["999999999", "888888888"],
+  adminName: "https://t.me/FakeAdmin",
+  lat: 15.00000000,
+  lon: 58.00000000,
+  images: [
+    "https://fakecompany.com/image1.jpg",
+    "https://fakecompany.com/image2.jpg"
+  ],
+);

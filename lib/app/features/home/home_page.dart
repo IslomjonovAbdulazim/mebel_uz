@@ -9,10 +9,16 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: context.backgroundColor,
         surfaceTintColor: context.backgroundColor,
-        title: Image.asset(
-          BrandConstants.long,
-          height: 150,
-          alignment: Alignment.centerLeft,
+        title: CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {
+            Get.toNamed(AppRoutes.company);
+          },
+          child: Image.asset(
+            BrandConstants.long,
+            height: 150,
+            alignment: Alignment.centerLeft,
+          ),
         ),
         actions: [
           CupertinoButton(
@@ -24,7 +30,7 @@ class HomePage extends StatelessWidget {
               IconConstants.phone,
               color: context.textPrimary,
               alignment: Alignment.centerLeft,
-              height: 35,
+              height: 32,
             ),
           ),
           SizedBox(width: 10),
@@ -36,7 +42,7 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10),
           children: [
             _Categories(),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
@@ -44,6 +50,7 @@ class HomePage extends StatelessWidget {
                 style: context.display,
               ),
             ),
+            SizedBox(height: 10),
             _Furniture(),
           ],
         ),

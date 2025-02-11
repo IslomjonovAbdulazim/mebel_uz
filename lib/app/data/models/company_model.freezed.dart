@@ -20,15 +20,16 @@ CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CompanyModel {
-  String get instagramChannel => throw _privateConstructorUsedError;
-  String get telegramChannel => throw _privateConstructorUsedError;
+  String get instagram => throw _privateConstructorUsedError;
+  String get telegram => throw _privateConstructorUsedError;
+  String get youtube => throw _privateConstructorUsedError;
   String get website => throw _privateConstructorUsedError;
+  @JsonKey(name: "telegram_bot")
   String get telegramBot => throw _privateConstructorUsedError;
-  List<String> get phoneNumbers => throw _privateConstructorUsedError;
-  String get adminName => throw _privateConstructorUsedError;
-  String get adminUrl => throw _privateConstructorUsedError;
-  double get lat => throw _privateConstructorUsedError;
-  double get lan => throw _privateConstructorUsedError;
+  List<String> get phones => throw _privateConstructorUsedError;
+  String get admin => throw _privateConstructorUsedError;
+  String get lat => throw _privateConstructorUsedError;
+  String get lon => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
 
   /// Serializes this CompanyModel to a JSON map.
@@ -48,15 +49,15 @@ abstract class $CompanyModelCopyWith<$Res> {
       _$CompanyModelCopyWithImpl<$Res, CompanyModel>;
   @useResult
   $Res call(
-      {String instagramChannel,
-      String telegramChannel,
+      {String instagram,
+      String telegram,
+      String youtube,
       String website,
-      String telegramBot,
-      List<String> phoneNumbers,
-      String adminName,
-      String adminUrl,
-      double lat,
-      double lan,
+      @JsonKey(name: "telegram_bot") String telegramBot,
+      List<String> phones,
+      String admin,
+      String lat,
+      String lon,
       List<String> images});
 }
 
@@ -75,25 +76,29 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? instagramChannel = null,
-    Object? telegramChannel = null,
+    Object? instagram = null,
+    Object? telegram = null,
+    Object? youtube = null,
     Object? website = null,
     Object? telegramBot = null,
-    Object? phoneNumbers = null,
-    Object? adminName = null,
-    Object? adminUrl = null,
+    Object? phones = null,
+    Object? admin = null,
     Object? lat = null,
-    Object? lan = null,
+    Object? lon = null,
     Object? images = null,
   }) {
     return _then(_value.copyWith(
-      instagramChannel: null == instagramChannel
-          ? _value.instagramChannel
-          : instagramChannel // ignore: cast_nullable_to_non_nullable
+      instagram: null == instagram
+          ? _value.instagram
+          : instagram // ignore: cast_nullable_to_non_nullable
               as String,
-      telegramChannel: null == telegramChannel
-          ? _value.telegramChannel
-          : telegramChannel // ignore: cast_nullable_to_non_nullable
+      telegram: null == telegram
+          ? _value.telegram
+          : telegram // ignore: cast_nullable_to_non_nullable
+              as String,
+      youtube: null == youtube
+          ? _value.youtube
+          : youtube // ignore: cast_nullable_to_non_nullable
               as String,
       website: null == website
           ? _value.website
@@ -103,26 +108,22 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
           ? _value.telegramBot
           : telegramBot // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumbers: null == phoneNumbers
-          ? _value.phoneNumbers
-          : phoneNumbers // ignore: cast_nullable_to_non_nullable
+      phones: null == phones
+          ? _value.phones
+          : phones // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      adminName: null == adminName
-          ? _value.adminName
-          : adminName // ignore: cast_nullable_to_non_nullable
-              as String,
-      adminUrl: null == adminUrl
-          ? _value.adminUrl
-          : adminUrl // ignore: cast_nullable_to_non_nullable
+      admin: null == admin
+          ? _value.admin
+          : admin // ignore: cast_nullable_to_non_nullable
               as String,
       lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lan: null == lan
-          ? _value.lan
-          : lan // ignore: cast_nullable_to_non_nullable
-              as double,
+              as String,
+      lon: null == lon
+          ? _value.lon
+          : lon // ignore: cast_nullable_to_non_nullable
+              as String,
       images: null == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
@@ -140,15 +141,15 @@ abstract class _$$CompanyModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String instagramChannel,
-      String telegramChannel,
+      {String instagram,
+      String telegram,
+      String youtube,
       String website,
-      String telegramBot,
-      List<String> phoneNumbers,
-      String adminName,
-      String adminUrl,
-      double lat,
-      double lan,
+      @JsonKey(name: "telegram_bot") String telegramBot,
+      List<String> phones,
+      String admin,
+      String lat,
+      String lon,
       List<String> images});
 }
 
@@ -165,25 +166,29 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? instagramChannel = null,
-    Object? telegramChannel = null,
+    Object? instagram = null,
+    Object? telegram = null,
+    Object? youtube = null,
     Object? website = null,
     Object? telegramBot = null,
-    Object? phoneNumbers = null,
-    Object? adminName = null,
-    Object? adminUrl = null,
+    Object? phones = null,
+    Object? admin = null,
     Object? lat = null,
-    Object? lan = null,
+    Object? lon = null,
     Object? images = null,
   }) {
     return _then(_$CompanyModelImpl(
-      instagramChannel: null == instagramChannel
-          ? _value.instagramChannel
-          : instagramChannel // ignore: cast_nullable_to_non_nullable
+      instagram: null == instagram
+          ? _value.instagram
+          : instagram // ignore: cast_nullable_to_non_nullable
               as String,
-      telegramChannel: null == telegramChannel
-          ? _value.telegramChannel
-          : telegramChannel // ignore: cast_nullable_to_non_nullable
+      telegram: null == telegram
+          ? _value.telegram
+          : telegram // ignore: cast_nullable_to_non_nullable
+              as String,
+      youtube: null == youtube
+          ? _value.youtube
+          : youtube // ignore: cast_nullable_to_non_nullable
               as String,
       website: null == website
           ? _value.website
@@ -193,26 +198,22 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
           ? _value.telegramBot
           : telegramBot // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumbers: null == phoneNumbers
-          ? _value._phoneNumbers
-          : phoneNumbers // ignore: cast_nullable_to_non_nullable
+      phones: null == phones
+          ? _value._phones
+          : phones // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      adminName: null == adminName
-          ? _value.adminName
-          : adminName // ignore: cast_nullable_to_non_nullable
-              as String,
-      adminUrl: null == adminUrl
-          ? _value.adminUrl
-          : adminUrl // ignore: cast_nullable_to_non_nullable
+      admin: null == admin
+          ? _value.admin
+          : admin // ignore: cast_nullable_to_non_nullable
               as String,
       lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lan: null == lan
-          ? _value.lan
-          : lan // ignore: cast_nullable_to_non_nullable
-              as double,
+              as String,
+      lon: null == lon
+          ? _value.lon
+          : lon // ignore: cast_nullable_to_non_nullable
+              as String,
       images: null == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
@@ -225,46 +226,47 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CompanyModelImpl implements _CompanyModel {
   const _$CompanyModelImpl(
-      {required this.instagramChannel,
-      required this.telegramChannel,
+      {required this.instagram,
+      required this.telegram,
+      required this.youtube,
       required this.website,
-      required this.telegramBot,
-      required final List<String> phoneNumbers,
-      required this.adminName,
-      required this.adminUrl,
+      @JsonKey(name: "telegram_bot") required this.telegramBot,
+      required final List<String> phones,
+      required this.admin,
       required this.lat,
-      required this.lan,
+      required this.lon,
       required final List<String> images})
-      : _phoneNumbers = phoneNumbers,
+      : _phones = phones,
         _images = images;
 
   factory _$CompanyModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CompanyModelImplFromJson(json);
 
   @override
-  final String instagramChannel;
+  final String instagram;
   @override
-  final String telegramChannel;
+  final String telegram;
+  @override
+  final String youtube;
   @override
   final String website;
   @override
+  @JsonKey(name: "telegram_bot")
   final String telegramBot;
-  final List<String> _phoneNumbers;
+  final List<String> _phones;
   @override
-  List<String> get phoneNumbers {
-    if (_phoneNumbers is EqualUnmodifiableListView) return _phoneNumbers;
+  List<String> get phones {
+    if (_phones is EqualUnmodifiableListView) return _phones;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_phoneNumbers);
+    return EqualUnmodifiableListView(_phones);
   }
 
   @override
-  final String adminName;
+  final String admin;
   @override
-  final String adminUrl;
+  final String lat;
   @override
-  final double lat;
-  @override
-  final double lan;
+  final String lon;
   final List<String> _images;
   @override
   List<String> get images {
@@ -275,7 +277,7 @@ class _$CompanyModelImpl implements _CompanyModel {
 
   @override
   String toString() {
-    return 'CompanyModel(instagramChannel: $instagramChannel, telegramChannel: $telegramChannel, website: $website, telegramBot: $telegramBot, phoneNumbers: $phoneNumbers, adminName: $adminName, adminUrl: $adminUrl, lat: $lat, lan: $lan, images: $images)';
+    return 'CompanyModel(instagram: $instagram, telegram: $telegram, youtube: $youtube, website: $website, telegramBot: $telegramBot, phones: $phones, admin: $admin, lat: $lat, lon: $lon, images: $images)';
   }
 
   @override
@@ -283,21 +285,18 @@ class _$CompanyModelImpl implements _CompanyModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CompanyModelImpl &&
-            (identical(other.instagramChannel, instagramChannel) ||
-                other.instagramChannel == instagramChannel) &&
-            (identical(other.telegramChannel, telegramChannel) ||
-                other.telegramChannel == telegramChannel) &&
+            (identical(other.instagram, instagram) ||
+                other.instagram == instagram) &&
+            (identical(other.telegram, telegram) ||
+                other.telegram == telegram) &&
+            (identical(other.youtube, youtube) || other.youtube == youtube) &&
             (identical(other.website, website) || other.website == website) &&
             (identical(other.telegramBot, telegramBot) ||
                 other.telegramBot == telegramBot) &&
-            const DeepCollectionEquality()
-                .equals(other._phoneNumbers, _phoneNumbers) &&
-            (identical(other.adminName, adminName) ||
-                other.adminName == adminName) &&
-            (identical(other.adminUrl, adminUrl) ||
-                other.adminUrl == adminUrl) &&
+            const DeepCollectionEquality().equals(other._phones, _phones) &&
+            (identical(other.admin, admin) || other.admin == admin) &&
             (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.lan, lan) || other.lan == lan) &&
+            (identical(other.lon, lon) || other.lon == lon) &&
             const DeepCollectionEquality().equals(other._images, _images));
   }
 
@@ -305,15 +304,15 @@ class _$CompanyModelImpl implements _CompanyModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      instagramChannel,
-      telegramChannel,
+      instagram,
+      telegram,
+      youtube,
       website,
       telegramBot,
-      const DeepCollectionEquality().hash(_phoneNumbers),
-      adminName,
-      adminUrl,
+      const DeepCollectionEquality().hash(_phones),
+      admin,
       lat,
-      lan,
+      lon,
       const DeepCollectionEquality().hash(_images));
 
   /// Create a copy of CompanyModel
@@ -334,38 +333,39 @@ class _$CompanyModelImpl implements _CompanyModel {
 
 abstract class _CompanyModel implements CompanyModel {
   const factory _CompanyModel(
-      {required final String instagramChannel,
-      required final String telegramChannel,
+      {required final String instagram,
+      required final String telegram,
+      required final String youtube,
       required final String website,
-      required final String telegramBot,
-      required final List<String> phoneNumbers,
-      required final String adminName,
-      required final String adminUrl,
-      required final double lat,
-      required final double lan,
+      @JsonKey(name: "telegram_bot") required final String telegramBot,
+      required final List<String> phones,
+      required final String admin,
+      required final String lat,
+      required final String lon,
       required final List<String> images}) = _$CompanyModelImpl;
 
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
       _$CompanyModelImpl.fromJson;
 
   @override
-  String get instagramChannel;
+  String get instagram;
   @override
-  String get telegramChannel;
+  String get telegram;
+  @override
+  String get youtube;
   @override
   String get website;
   @override
+  @JsonKey(name: "telegram_bot")
   String get telegramBot;
   @override
-  List<String> get phoneNumbers;
+  List<String> get phones;
   @override
-  String get adminName;
+  String get admin;
   @override
-  String get adminUrl;
+  String get lat;
   @override
-  double get lat;
-  @override
-  double get lan;
+  String get lon;
   @override
   List<String> get images;
 

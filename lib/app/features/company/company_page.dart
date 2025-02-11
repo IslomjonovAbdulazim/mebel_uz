@@ -5,6 +5,7 @@ class CompanyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CompanyController>();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: context.backgroundColor,
@@ -16,18 +17,24 @@ class CompanyPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
-          children: [
-            _SocialAccounts(),
-            Divider(color: context.dividerColor),
-            _Contact(),
-            Divider(color: context.dividerColor),
-            _Location(),
-            SizedBox(height: 200),
-          ],
-        ),
+      body: Obx(
+        () => controller.isLoading.value
+            ? Center(
+                child: CircularProgressIndicator.adaptive(),
+              )
+            : SingleChildScrollView(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  children: [
+                    _SocialAccounts(),
+                    Divider(color: context.dividerColor),
+                    _Contact(),
+                    Divider(color: context.dividerColor),
+                    _Location(),
+                    SizedBox(height: 200),
+                  ],
+                ),
+              ),
       ),
     );
   }

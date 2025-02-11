@@ -23,8 +23,6 @@ mixin _$FurnitureModel {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
-  bool get discount => throw _privateConstructorUsedError;
-  int? get discountPercent => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
 
   /// Serializes this FurnitureModel to a JSON map.
@@ -43,13 +41,7 @@ abstract class $FurnitureModelCopyWith<$Res> {
           FurnitureModel value, $Res Function(FurnitureModel) then) =
       _$FurnitureModelCopyWithImpl<$Res, FurnitureModel>;
   @useResult
-  $Res call(
-      {int id,
-      String name,
-      int price,
-      bool discount,
-      int? discountPercent,
-      List<String> images});
+  $Res call({int id, String name, int price, List<String> images});
 }
 
 /// @nodoc
@@ -70,8 +62,6 @@ class _$FurnitureModelCopyWithImpl<$Res, $Val extends FurnitureModel>
     Object? id = null,
     Object? name = null,
     Object? price = null,
-    Object? discount = null,
-    Object? discountPercent = freezed,
     Object? images = null,
   }) {
     return _then(_value.copyWith(
@@ -87,14 +77,6 @@ class _$FurnitureModelCopyWithImpl<$Res, $Val extends FurnitureModel>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
-      discount: null == discount
-          ? _value.discount
-          : discount // ignore: cast_nullable_to_non_nullable
-              as bool,
-      discountPercent: freezed == discountPercent
-          ? _value.discountPercent
-          : discountPercent // ignore: cast_nullable_to_non_nullable
-              as int?,
       images: null == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
@@ -111,13 +93,7 @@ abstract class _$$FurnitureModelImplCopyWith<$Res>
       __$$FurnitureModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String name,
-      int price,
-      bool discount,
-      int? discountPercent,
-      List<String> images});
+  $Res call({int id, String name, int price, List<String> images});
 }
 
 /// @nodoc
@@ -136,8 +112,6 @@ class __$$FurnitureModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? price = null,
-    Object? discount = null,
-    Object? discountPercent = freezed,
     Object? images = null,
   }) {
     return _then(_$FurnitureModelImpl(
@@ -153,14 +127,6 @@ class __$$FurnitureModelImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
-      discount: null == discount
-          ? _value.discount
-          : discount // ignore: cast_nullable_to_non_nullable
-              as bool,
-      discountPercent: freezed == discountPercent
-          ? _value.discountPercent
-          : discountPercent // ignore: cast_nullable_to_non_nullable
-              as int?,
       images: null == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
@@ -176,8 +142,6 @@ class _$FurnitureModelImpl implements _FurnitureModel {
       {required this.id,
       required this.name,
       required this.price,
-      required this.discount,
-      required this.discountPercent,
       required final List<String> images})
       : _images = images;
 
@@ -190,10 +154,6 @@ class _$FurnitureModelImpl implements _FurnitureModel {
   final String name;
   @override
   final int price;
-  @override
-  final bool discount;
-  @override
-  final int? discountPercent;
   final List<String> _images;
   @override
   List<String> get images {
@@ -204,7 +164,7 @@ class _$FurnitureModelImpl implements _FurnitureModel {
 
   @override
   String toString() {
-    return 'FurnitureModel(id: $id, name: $name, price: $price, discount: $discount, discountPercent: $discountPercent, images: $images)';
+    return 'FurnitureModel(id: $id, name: $name, price: $price, images: $images)';
   }
 
   @override
@@ -215,17 +175,13 @@ class _$FurnitureModelImpl implements _FurnitureModel {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.price, price) || other.price == price) &&
-            (identical(other.discount, discount) ||
-                other.discount == discount) &&
-            (identical(other.discountPercent, discountPercent) ||
-                other.discountPercent == discountPercent) &&
             const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, price, discount,
-      discountPercent, const DeepCollectionEquality().hash(_images));
+  int get hashCode => Object.hash(runtimeType, id, name, price,
+      const DeepCollectionEquality().hash(_images));
 
   /// Create a copy of FurnitureModel
   /// with the given fields replaced by the non-null parameter values.
@@ -249,8 +205,6 @@ abstract class _FurnitureModel implements FurnitureModel {
       {required final int id,
       required final String name,
       required final int price,
-      required final bool discount,
-      required final int? discountPercent,
       required final List<String> images}) = _$FurnitureModelImpl;
 
   factory _FurnitureModel.fromJson(Map<String, dynamic> json) =
@@ -262,10 +216,6 @@ abstract class _FurnitureModel implements FurnitureModel {
   String get name;
   @override
   int get price;
-  @override
-  bool get discount;
-  @override
-  int? get discountPercent;
   @override
   List<String> get images;
 

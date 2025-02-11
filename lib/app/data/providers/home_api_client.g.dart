@@ -10,7 +10,7 @@ part of 'home_api_client.dart';
 
 class _HomeApiClient implements HomeApiClient {
   _HomeApiClient(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://10.10.5.125:8001/';
+    baseUrl ??= 'http://85.92.110.162:8000/';
   }
 
   final Dio _dio;
@@ -111,14 +111,14 @@ class _HomeApiClient implements HomeApiClient {
   @override
   Future<List<FurnitureModel>> categoryRelatedFurniture(String id) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'category': id};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<FurnitureModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/api/v1/category-furniture/${id}',
+            '/api/v1/furniture/{furniture_id}/',
             queryParameters: queryParameters,
             data: _data,
           )

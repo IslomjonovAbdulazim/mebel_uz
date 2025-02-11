@@ -10,8 +10,6 @@ class FurnitureModel with _$FurnitureModel {
     required int id,
     required String name,
     required int price,
-    required bool discount,
-    required int? discountPercent,
     required List<String> images,
   }) = _FurnitureModel;
 
@@ -25,8 +23,6 @@ extension FurnitureModelX on FurnitureModel {
       id: id,
       name: name,
       price: price,
-      discount: discount,
-      discountPercent: discountPercent,
       images: images,
     );
   }

@@ -52,7 +52,7 @@ class _Categories extends StatelessWidget {
               style: context.display,
             ),
           ),
-          SizedBox(height: 4),
+          SizedBox(height: 10),
           controller.isLoadingCategories.value
               ? Center(
                   child: CircularProgressIndicator.adaptive(),
