@@ -22,7 +22,8 @@ void main() async {
   ]);
   await GetStorage.init();
   Get.put(ThemeController());
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: SystemUiOverlay.values);
   runApp(const MyApp());
 }
 
@@ -42,6 +43,7 @@ class _MyAppState extends State<MyApp> {
     });
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {

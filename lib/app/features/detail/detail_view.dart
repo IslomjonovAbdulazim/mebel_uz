@@ -15,15 +15,17 @@ class _Images extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Obx(
-                    () => CachedNetworkImage(
-                      useOldImageOnUrlChange: true,
-                      imageUrl: controller
-                          .detail.value.images[controller.currentImage.value],
-                      errorWidget: (_, __, ___) =>
-                          Icon(Icons.error, color: context.error),
-                      placeholder: (context, url) =>
-                          CircularProgressIndicator.adaptive(
-                        backgroundColor: context.textPrimary,
+                    () => Center(
+                      child: CachedNetworkImage(
+                        useOldImageOnUrlChange: true,
+                        imageUrl: controller
+                            .detail.value.images[controller.currentImage.value],
+                        errorWidget: (_, __, ___) =>
+                            Icon(Icons.error, color: context.error),
+                        placeholder: (context, url) =>
+                            CircularProgressIndicator.adaptive(
+                          backgroundColor: context.textPrimary,
+                        ),
                       ),
                     ),
                   ),

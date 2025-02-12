@@ -1,11 +1,11 @@
-// lib/utils/helpers/logger.dart
+import 'package:flutter/cupertino.dart';
+
 class Logger {
   static void log(String message) {
-    // You might integrate a more advanced logging framework later.
-    print("[LOG] $message");
+    debugPrint("[LOG] $message");
   }
 
   static void error(String message) {
-    print("[ERROR] $message");
+    debugPrint("[ERROR] $message");
   }
 }

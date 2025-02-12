@@ -2,12 +2,13 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wordly_project/app/routes/app_routes.dart';
-import 'package:wordly_project/domain/entities/furniture_entity.dart';
-import 'package:wordly_project/utils/constants/icon_constants.dart';
-import 'package:wordly_project/utils/extenstions/color_extension.dart';
-import 'package:wordly_project/utils/extenstions/text_style_extention.dart';
-import 'package:wordly_project/utils/helpers/number_formatter_helper.dart';
+
+import '../../domain/entities/furniture_entity.dart';
+import '../../utils/constants/icon_constants.dart';
+import '../../utils/extenstions/color_extension.dart';
+import '../../utils/extenstions/text_style_extention.dart';
+import '../../utils/helpers/number_formatter_helper.dart';
+import '../routes/app_routes.dart';
 
 class FurnitureWidget extends StatelessWidget {
   final FurnitureEntity furniture;
@@ -47,6 +48,7 @@ class FurnitureWidget extends StatelessWidget {
                       )
                     : ClipRRect(
                         borderRadius: BorderRadius.circular(15),
+                        clipBehavior: Clip.antiAlias,
                         child: CachedNetworkImage(
                           imageUrl: furniture.images[0],
                           placeholder: (context, url) =>
@@ -64,16 +66,17 @@ class FurnitureWidget extends StatelessWidget {
             ),
             SizedBox(height: 6),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 2),
               child: Text(
                 furniture.name,
                 style: context.title,
-                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
               ),
             ),
             SizedBox(height: 4),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Text(
                 "${NumberFormatterHelper.formatWithSeparator(furniture.price)}  UZS",
                 style: context.price,

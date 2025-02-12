@@ -118,7 +118,7 @@ class _HomeApiClient implements HomeApiClient {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/api/v1/furniture/{furniture_id}/',
+            '/api/v1/furniture/',
             queryParameters: queryParameters,
             data: _data,
           )

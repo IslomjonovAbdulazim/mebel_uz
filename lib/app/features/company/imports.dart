@@ -10,6 +10,7 @@ import 'package:wordly_project/app/controllers/company_controller.dart';
 import 'package:wordly_project/utils/constants/icon_constants.dart';
 import 'package:wordly_project/utils/extenstions/color_extension.dart';
 import 'package:wordly_project/utils/extenstions/text_style_extention.dart';
+import 'package:wordly_project/utils/helpers/number_formatter_helper.dart';
 
 import '../../../utils/constants/brand_constants.dart';
 

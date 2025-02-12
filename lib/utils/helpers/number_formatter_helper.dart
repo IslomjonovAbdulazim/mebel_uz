@@ -19,4 +19,9 @@ class NumberFormatterHelper {
 
     return "${value.toStringAsFixed(decimalPlaces)}${suffixes[index]}";
   }
+
+  static String formatPhoneNumber(int input) {
+    String number = input.toString();
+    return "(99)  ${number.substring(0, 3)}-${number.substring(3, 5)}-${number.substring(5, 7)}";
+  }
 }

@@ -11,6 +11,22 @@ class DetailPage extends StatelessWidget {
         backgroundColor: context.backgroundColor,
         surfaceTintColor: context.backgroundColor,
         title: Text("Mahsulot Haqida"),
+        centerTitle: true,
+        actions: [
+          CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {
+              Get.toNamed(AppRoutes.company);
+            },
+            child: Image.asset(
+              IconConstants.phone,
+              color: context.textPrimary,
+              alignment: Alignment.centerLeft,
+              height: 25,
+            ),
+          ),
+          SizedBox(width: 10),
+        ],
       ),
       body: SafeArea(
         child: Obx(

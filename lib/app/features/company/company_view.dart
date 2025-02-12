@@ -168,7 +168,7 @@ class _Contact extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Text(
-                        "(90)  123-45-67",
+                        NumberFormatterHelper.formatPhoneNumber(phone),
                         style: context.title,
                       ),
                     ],

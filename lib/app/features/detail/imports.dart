@@ -9,6 +9,8 @@ import 'package:wordly_project/utils/extenstions/color_extension.dart';
 import 'package:wordly_project/utils/extenstions/text_style_extention.dart';
 import 'package:wordly_project/utils/helpers/logger.dart';
 
+import '../../routes/app_routes.dart';
+
 part 'detail_page.dart';
 part 'detail_view.dart';
 part 'detail_widgets.dart';
