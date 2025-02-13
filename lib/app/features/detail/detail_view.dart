@@ -38,6 +38,7 @@ class _Images extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 5),
+
               SizedBox(
                 height: 65,
                 child: Center(
