@@ -1,5 +1,11 @@
 part of 'imports.dart';
 
+List images = [
+  "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=0&k=20&c=z8_rWaI8x4zApNEEG9DnWlGXyDIXe-OmsAyQ5fGPVV8=",
+  "https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=",
+  "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg",
+];
+
 class _Images extends StatelessWidget {
   const _Images();
 
@@ -11,15 +17,15 @@ class _Images extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Obx(
                     () => Center(
                       child: CachedNetworkImage(
                         useOldImageOnUrlChange: true,
-                        imageUrl: controller
-                            .detail.value.images[controller.currentImage.value],
+                        imageUrl:
+                            images[controller.currentImage.value],
                         errorWidget: (_, __, ___) =>
                             Icon(Icons.error, color: context.error),
                         placeholder: (context, url) =>
@@ -31,7 +37,8 @@ class _Images extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 0),
+
+              SizedBox(height: 5),
               SizedBox(
                 height: 65,
                 child: Center(
@@ -40,7 +47,7 @@ class _Images extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: List.generate(
-                        controller.detail.value.images.length,
+                        images.length,
                         (int index) {
                           return CupertinoButton(
                             padding: EdgeInsets.zero,
@@ -56,8 +63,7 @@ class _Images extends StatelessWidget {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: CachedNetworkImage(
-                                  imageUrl:
-                                      controller.detail.value.images[index],
+                                  imageUrl: images[index],
                                   errorWidget: (_, __, ___) =>
                                       Icon(Icons.error, color: context.error),
                                 ),
